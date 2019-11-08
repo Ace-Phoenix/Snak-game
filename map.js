@@ -1,0 +1,29 @@
+class map(){
+  constructor(data){
+    this._width = this._datatype(data.size.width, "int");
+    this._height = this._datatype(date.size.height, "int");
+    this._tile = this._datatype(date.tile, "obj");
+  }
+  _dataCheck(item, type){
+     try{ var retVal = Utils.typeCheck(item, type, "Map constructor"); }
+     catch(e){
+       e += "The Map class constructor expects an object of the format: ";
+       e += "{name: str, size: {width: int, height: int}, tile: Class, fill:str}. ";
+       e += "One or more part of this object failed to pass type checking or was ";
+       e += "not present in the starting data object.";
+       throw new Error(e);
+     }
+     return retVal;
+   }
+
+  _initMap(size, fill){
+  var cells = [];
+  for (var i = 0; i < size.height; i++) {
+    cells[i] = {};
+    for (var j = 0; j < size.width; j++) {
+      cells[i][j] = new this.tile(fill);
+      }
+    }
+  return cells;
+  }
+}
