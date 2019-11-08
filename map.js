@@ -1,9 +1,11 @@
-class map(){
+class map{
   constructor(data){
     this._width = this._datatype(data.size.width, "int");
     this._height = this._datatype(date.size.height, "int");
     this._tile = this._datatype(date.tile, "obj");
+    this._fill = this._dataCheck(data.fill, "str");
   }
+
   _dataCheck(item, type){
      try{ var retVal = Utils.typeCheck(item, type, "Map constructor"); }
      catch(e){
@@ -26,4 +28,16 @@ class map(){
     }
   return cells;
   }
+
+  set width(int){ this._width = Utils.typeCheck(int, "int", "Map.width"); }
+  get width(){ return this._width; }
+
+  set height(int){ this._heigth = Utils.typeCheck(int, "int", "Map.height"); }
+  get height(){ return this._height; }
+
+  set tile(cls){ this._tile = Utils.typeCheck(cls, "class", "Map.width"); }
+  get tile(){ return this._tile; }
+
+  set fill(str){ this._fill = Utils.typeCheck(str, "str", "Map.width"); }
+  get fill(){ return this._fill; }
 }
