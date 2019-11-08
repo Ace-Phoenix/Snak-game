@@ -3,6 +3,6 @@ class Snek{
     this.head = head;
     this.body = body;
     this.direction = direction;
-
   }
+  
 }
