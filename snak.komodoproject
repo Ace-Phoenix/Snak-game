@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="161a22fd-8e8f-4fd4-8f1a-12df31211669" kpf_version="5" name="snak.komodoproject">
+<file id="3d5b1c14-c893-45d5-acfc-9b661543e5d5" idref="161a22fd-8e8f-4fd4-8f1a-12df31211669" name="snak.html" url="snak.html">
+</file>
+<file id="81b907bc-4f6f-44bf-b7a8-c9a8eb024a9e" idref="161a22fd-8e8f-4fd4-8f1a-12df31211669" name="snak.js" url="snak.js">
+</file>
+<file id="9fb85d1e-94bc-4051-baaf-5aaa53a0ddbb" idref="161a22fd-8e8f-4fd4-8f1a-12df31211669" name="snak.css" url="snak.css">
+</file>
 <preference-set idref="161a22fd-8e8f-4fd4-8f1a-12df31211669" id="project" preftype="project">
 </preference-set>
 </project>
