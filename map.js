@@ -40,4 +40,5 @@ class map{
 
   set fill(str){ this._fill = Utils.typeCheck(str, "str", "Map.width"); }
   get fill(){ return this._fill; }
+
 }
