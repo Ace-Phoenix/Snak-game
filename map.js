@@ -22,7 +22,6 @@ class map{
   var retAry = []
   var cells = {x:undefined,y:undefined}
   for (var i = 0; i < size.height; i++) {
-    cells = {x:i,y:undefined}
     for (var j = 0; j < size.width; j++) {
       cells = {x:i,y:j}
       }
