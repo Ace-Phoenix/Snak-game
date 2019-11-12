@@ -19,14 +19,15 @@ class map{
    }
 
   _initMap(size, fill){
-  var cells = [];
+  var retAry = []
+  var cells = {x:undefined,y:undefined}
   for (var i = 0; i < size.height; i++) {
-    cells[i] = {};
+    cells = {x:i,y:undefined}
     for (var j = 0; j < size.width; j++) {
-      cells[i][j] = new this.tile(fill);
+      cells = {x:i,y:j}
       }
     }
-  return cells;
+  return retAry.push(cells);
   }
 
   set width(int){ this._width = Utils.typeCheck(int, "int", "Map.width"); }
