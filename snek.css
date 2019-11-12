@@ -2,10 +2,12 @@ body{
     border: inset;
     border-radius: 5px;
 }
+button{
+}
 .snek-map{
         border: outset;
     border-radius: 10px;
-    margin-right: 750px;
+    display: inline-block;
 }
 .snek-heading{
     text-align: center;
@@ -13,6 +15,68 @@ body{
 .snek-heading-p{
     border: outset;
     border-radius: 8px;
-    margin-right: 500px;
-    margin-left: 500px;
+    margin-right: 550px;
+    margin-left: 550px;
+}
+.leftBTNtop{
+position: fixed;
+top:15%;
+right:30%;
+width: 55px;
+height: 25px;
+font-family: monospace;
+font-weight: 900;
+font-size: larger;
+border-style: outset;
+border-width: 2.5px;
+}
+.leftBTNbottom{
+position: fixed;
+top:20%;
+right:30%;
+width: 55px;
+height: 25px;
+font-family: monospace;
+font-weight: 900;
+font-size: larger;
+border-style: outset;
+border-width: 2.5px;
+}
+.rightBTNtop{
+position: fixed;
+top:15%;
+right:25%;
+width: 55px;
+height: 25px;
+font-family: monospace;
+font-weight: 900;
+font-size: larger;
+border-style: outset;
+border-width: 2.5px;
+
+}
+.rightBTNbottom{
+position: fixed;
+top:20%;
+right:25%;
+width: 55px;
+height: 25px;
+font-family: monospace;
+font-weight: 900;
+font-size: larger;
+border-style: outset;
+border-width: 2.5px;
+}
+button:active {
+  background-color:rgb(175,175,175);
+  border-style: inset;
+  box-shadow: 0 1px #666;
+  transform: translateY(2px);
+}
+.buttons{
+    border: inset;
+    top:20%;
+right:25%;
+width: 55px;
+height: 25px;
 }
