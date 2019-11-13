@@ -74,9 +74,11 @@ button:active {
   transform: translateY(2px);
 }
 .buttons{
+    position: fixed;
     border: inset;
-    top:20%;
-right:25%;
-width: 55px;
-height: 25px;
+top:14%;
+right:24.2%;
+width: 135px;
+height: 65px;
+border-radius: 6px;
 }
