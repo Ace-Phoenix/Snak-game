@@ -10,7 +10,7 @@ class Snek{
   //setters
   set body(length){this._body = length};
   set direction(direction){this.direction = direction};
-}
+
 _keyToMove(key){
   key = Utils.typeCheck(key, "str", "dungeon._keyToMove");
   var whitelist = ["W", "A", "S", "D"]
@@ -25,4 +25,5 @@ _keyToMove(key){
     S :{x:coordinates.x, y:coordinates.y+1},//down
   }
   return move[key];
+  }
 }
