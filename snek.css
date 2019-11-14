@@ -13,7 +13,8 @@ body{
 }
 .snek-heading{
     text-align: center;
-    text-shadow:0 0 1.5px rgb(0 220 0),0 0 2.5px rgb(0 255 0),
+    color: white;
+    text-shadow:0 0 1.5px rgb(75 200 75),0 0 2.5px rgb(50 200 50),
     1px 1px 5px white,-1px 1px 5px white,1px -1px 5px white, -1px -1px 5px white,
     4px 3px 3px rgb(140 140 140),5px 4px 3px rgb(150 150 150),
     4px 3px 1px rgb(0 45 0),5px 4px 1px rgb(0 100 0);
@@ -36,6 +37,11 @@ font-weight: 900;
 font-size: larger;
 border-style: outset;
 border-width: 2.5px;
+    color: white;
+    text-shadow:0 0 1.5px rgb(75 200 75),0 0 2.5px rgb(50 200 50),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140 140 140),3px 2px 4px rgb(150 150 150),
+    2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
 }
 .leftBTNbottom{
 position: fixed;
@@ -48,6 +54,11 @@ font-weight: 900;
 font-size: larger;
 border-style: outset;
 border-width: 2.5px;
+    color: white;
+    text-shadow:0 0 1.5px rgb(75 200 75),0 0 2.5px rgb(50 200 50),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140 140 140),3px 2px 4px rgb(150 150 150),
+    2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
 }
 .rightBTNtop{
 position: fixed;
@@ -60,7 +71,11 @@ font-weight: 900;
 font-size: larger;
 border-style: outset;
 border-width: 2.5px;
-
+    color: white;
+    text-shadow:0 0 1.5px rgb(75 200 75),0 0 2.5px rgb(50 200 50),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140 140 140),3px 2px 4px rgb(150 150 150),
+    2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
 }
 .rightBTNbottom{
 position: fixed;
@@ -73,6 +88,11 @@ font-weight: 900;
 font-size: larger;
 border-style: outset;
 border-width: 2.5px;
+    color: white;
+    text-shadow:0 0 1.5px rgb(125 125 200),0 0 2.5px rgb(100 100 200),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140 140 140),3px 2px 4px rgb(150 150 150),
+    2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
 }
 button:active {
   background-color:rgb(195,195,195);
@@ -90,4 +110,5 @@ height: 65px;
 border-radius: 6px;
 box-shadow: 0 0 2.5px grey;
 background-color: white;
+
 }
