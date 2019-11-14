@@ -26,3 +26,25 @@ _keyToMove(key){
   return move[key];
 }
 }
+  set body(length){this._body = length};
+  set direction(direction){this.direction = direction};
+
+}
+//checks for wasd to pushed
+document.addEventListener("keypress", function onPress(event) {
+  var push = {key:undefined};
+    if (event.key === "w") {
+      push = {key:"w"}
+    }
+    if (event.key === "a") {
+       push = {key:"a"}
+    }
+    if (event.key === "s") {
+      push = {key:"s"}
+    }
+    if (event.key === "d") {
+      push = {key:"d"}
+    }
+    console.log(push)
+    return push;
+});

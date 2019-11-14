@@ -109,7 +109,6 @@ catch(e){var heroloc = {x:null,y:null}}
         }
         output += this._edgeTrim(line);
     }
-
     if(this.namePosition == "bottom" && this._name !== undefined ){  // end
       output += this._endTrim(map.width, "bottom", this.name);
     }  else { output += this._endTrim(map.width); }

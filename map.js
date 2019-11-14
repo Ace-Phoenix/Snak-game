@@ -24,9 +24,23 @@ class map{
   for (var i = 0; i < size.height; i++) {
     for (var j = 0; j < size.width; j++) {
       cells = {x:i,y:j};
+      retAry.push(cells);
       }
     }
-  return retAry.push(cells);
+    return retAry;
+  }
+
+  update(dungeon){
+    for (var y = 0; y < this.cells.length; y++) {
+      for (var x = 0; x < this.cells[y].length; x++) {
+        this.cells[y][x].update(dungeon, {x: x, y: y});
+      }
+    }
+    for (var y = 0; y < this.cells.length; y++) {
+      for (var x = 0; x < this.cells[y].length; x++) {
+        this.cells[y][x].reset();
+      }
+    }
   }
 
   set width(int){ this._width = Utils.typeCheck(int, "int", "Map.width"); }
