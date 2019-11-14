@@ -19,11 +19,11 @@ class map{
    }
 
   _initMap(size, fill){
-  var retAry = []
-  var cells = {x:undefined,y:undefined}
+  var retAry = [];
+  var cells = {x:undefined,y:undefined};
   for (var i = 0; i < size.height; i++) {
     for (var j = 0; j < size.width; j++) {
-      cells = {x:i,y:j}
+      cells = {x:i,y:j};
       }
     }
   return retAry.push(cells);
