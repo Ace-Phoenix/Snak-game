@@ -17,7 +17,8 @@ class Map {
     return retAry;
   }
 
-  _mapAppear(width, length){
+
+  _mapAppear(width=10, length=10){
     var bob = this._map;
     if (bob.x <= 0 || bob.y >= width) {
       bob.image = "=";
@@ -25,6 +26,8 @@ class Map {
     if (bob.x >= length || bob.y <= 0) {
       bob.image = "|";
     }
-    return bob
+    return bob;
   }
 }
+var joe = document.getElementsByClassName("snek-map")
+joe.innerHTML = Map._mapAppear;
