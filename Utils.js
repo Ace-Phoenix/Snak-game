@@ -25,7 +25,7 @@ class Utils {
   @return: {object} an object of keys {change: new val, keep: coord.start value}
   */
   static _getDif(coordinates, change, keep){
-    return {[keep]: coordinates.start[keep], [change]: coordinates.end[change]}
+    return {[keep]: coordinates.start[keep], [change]: coordinates.end[change]};
   }
 
   /* --- Custom Error Methods ----------------------------------------------- */
@@ -40,10 +40,10 @@ class Utils {
     type = type.toLowerCase();
     // check type for whitelist to avoid typos, pick up some shorthand
     if(type === "bool"){ type = "boolean"; }
-    if(type === "str"){ type = "string" ; }
-    if(type === "class" || type === "constructor"){ type = "function"}
-    if(type === "obj"){ type = "object"}
-    if(type === "int"){ type = "integer"};
+    if(type === "str"){ type = "string" ;}
+    if(type === "class" || type === "constructor"){ type = "function";}
+    if(type === "obj"){ type = "object";}
+    if(type === "int"){ type = "integer";}
     var whitelist = ["int", "integer",  "function", "object", "number", "string", "boolean", "array"];
     var errorText = "The method " + call + " expected a " + type + " and received " + item + ".";
 
@@ -170,7 +170,7 @@ class Utils {
   @return {object}: a length and height keyed set of coordinates in an object
   */
   static dimensions(coordinates){
-    return {width: coordinates.x, height: coordinates.y}
+    return {width: coordinates.x, height: coordinates.y};
   }
 
   /* horizontal(start, end)
@@ -232,7 +232,7 @@ class Utils {
   static collisionRemover(keep, change){
     var returnArray = [];
     for (var i = 0; i < change.length; i++) {
-      var newObject = {x: change[i].x, y: change[i].y}
+      var newObject = {x: change[i].x, y: change[i].y};
       if (!this.collisionDectector([newObject], keep)) {
         returnArray.push(newObject);
       }
@@ -251,7 +251,7 @@ class Utils {
    if(whitelist.includes(item) == true){
      return item;
    }
-   throw new Error("unexpected item " + item + " passed to method " + call + ".")
+   throw new Error("unexpected item " + item + " passed to method " + call + ".");
   }
 
 }
