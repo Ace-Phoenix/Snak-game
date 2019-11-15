@@ -3,7 +3,7 @@ class Map {
     this.width = this._width;
     this.height = this._height;
     this.map = this._map;
-    this.image = "";
+     this.image = "";
   }
 
   _map(width=10, height=10){
@@ -18,17 +18,16 @@ class Map {
     return retAry;
   }
 
-
   _mapAppear(width=10, length=10){
     var bob = this._map;
     var length = bob.length;
-    for (var i = 0; i < bob.x.length; i++) {
+    for (var i = 0; i < bob.x.length; i++) { //creates the ceiling
       if (bob.x <= 0 || bob.y >= width) {
         bob.image = "=";
       }
     }
     for (var i = 0; i < bob.y.length; i++) {
-      if (bob.x >= length || bob.y <= 0) {
+      if (bob.x >= length || bob.y <= 0) { //creates the walls
         bob.image = "|";
       }
     }
