@@ -18,6 +18,7 @@ class Map {
     return retAry;
   }
 
+
   _mapAppear(width=10, length=10){
     var bob = this._map;
     var length = bob.length;
@@ -33,7 +34,6 @@ class Map {
     }
     return bob;
   }
-
 }
 var joe = document.getElementsByClassName("snek-map")
 joe.innerHTML = Map._mapAppear;

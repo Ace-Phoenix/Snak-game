@@ -26,8 +26,8 @@ _keyToMove(key){
   return move[key];
 }
 }
-  set body(length){this._body = length};
-  set direction(direction){this.direction = direction};
+  set body(length){this._body = length}
+  set direction(direction){this.direction = direction}
 
 }
 //checks for wasd to pushed
