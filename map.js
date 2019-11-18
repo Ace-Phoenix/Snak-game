@@ -7,7 +7,7 @@ class Map {
 
   _map(width, height){
     var retAry = [];
-    var obj = {x:undefined,y:undefined, image:""};
+    var obj = {x:undefined,y:undefined};
     for (var i = 0; i < height; i++) {
       for (var j = 0; j < width; j++) {
         obj = {x:j, y:i}
