@@ -43,6 +43,7 @@ class Map {
         }
       }
     }
+    console.log("boop");
     var llama = bob.toString();
     return llama;
   }
