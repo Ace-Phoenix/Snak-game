@@ -7,7 +7,7 @@ class Map {
 
   _map(width, height){
     var retAry = [];
-    var obj = {x:undefined,y:undefined};
+    var obj = {x:undefined,y:undefined, image:""};
     for (var i = 0; i < height; i++) {
       for (var j = 0; j < width; j++) {
         obj = {x:j, y:i}
@@ -29,23 +29,21 @@ class Map {
     for (var i = 0; i < whole; i++) {
       if (bob[i].y <= 0 || bob[i].x >= width-1) {
         bob[i] = "=";
-      }else {
-        bob[i] = "#";
       }
     }
     for (var j = 0; j < whole; j++) {
       if (bob[j].y >= height-1 || bob[j].x <=0) {
-        bob[j] = "|"+ "<br>";
+        bob[j] = "|<br>";//going to need to put a <br> here
       }
       if (bob[j].y == 0 || bob[j].y == height-1) {
         if (bob[j].x == 0 || bob[j].x == width-1) {
-          bob[j] = "+";
+          bob[j] = "+<br>";
         }
+      }else {
+        bob[i] = "#"
       }
     }
-    console.log("boop");
-    var llama = bob.toString();
-    return llama;
+    return bob.toString();
   }
 }
 lol = new Map();
