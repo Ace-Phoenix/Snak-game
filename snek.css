@@ -36,8 +36,8 @@ body{
 }
 .leftBTNtop{
 position: fixed;
-top:15%;
-right:30%;
+top:80%;
+right:15%;
 width: 55px;
 height: 25px;
 font-family: monospace;
@@ -53,8 +53,8 @@ border-width: 2.5px;
 }
 .leftBTNbottom{
 position: fixed;
-top:20%;
-right:30%;
+top:85%;
+right:15%;
 width: 55px;
 height: 25px;
 font-family: monospace;
@@ -70,8 +70,8 @@ border-width: 2.5px;
 }
 .rightBTNtop{
 position: fixed;
-top:15%;
-right:25%;
+top:80%;
+right:10%;
 width: 55px;
 height: 25px;
 font-family: monospace;
@@ -87,8 +87,8 @@ border-width: 2.5px;
 }
 .rightBTNbottom{
 position: fixed;
-top:20%;
-right:25%;
+top:85%;
+right:10%;
 width: 55px;
 height: 25px;
 font-family: monospace;
@@ -112,8 +112,8 @@ button:active {
 .buttons{
     position: fixed;
     border: inset;
-top:14%;
-right:24.2%;
+top:79%;
+right:9.3%;
 width: 135px;
 height: 65px;
 border-radius: 6px;
