@@ -27,7 +27,7 @@ _keyToMove(key){
 }
 }
 //checks for wasd to pushed
-document.addEventListener("keypress", function onPress(event) {
+document.addEventListener("keyup", function onKeyUp(event) {
   var push = {key:undefined};
     if (event.key === "w") {
       push = {key:"w"};

@@ -8,14 +8,13 @@ class Map {
 
   _map(width, height){
     var retAry = [];
-    var test = [];
     for (var i = 0; i < width; i++) {
       for (var j = 0; j < height; j++) {
         var obj = {image: "",x:j, y:i};
         retAry.push(obj);
-        test.push(obj.image);
       }
     }
+    console.log(retAry);
     return retAry;
   }
 

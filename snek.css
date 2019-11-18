@@ -13,7 +13,11 @@ body{
     border-radius: 10px;
     display: inline-block;
     background-color: white;
-    box-shadow: 2px 2px 5px white,5px 5px 6px grey;
+    box-shadow:0 1px 1.5px rgb(255,255,175),0 1px 2.5px rgb(240,240,170),
+    0 -1px 1.5px rgb(125,25,125),0 -1px 2.5px rgb(125,0,125),
+    2px 0 1.5px rgb(225,100,100),2px 0 2.5px rgb(225,75,75),
+    -2px 0 1.5px rgb(125,125,200),-2px 0 2.5px rgb(100,100,200),
+    2px 2px 5px white,5px 5px 6px grey;
 }
 .snek-heading{
     text-align: center;
@@ -42,7 +46,7 @@ font-size: larger;
 border-style: outset;
 border-width: 2.5px;
     color: white;
-    text-shadow:0 0 1.5px rgb(75 200 75),0 0 2.5px rgb(50 200 50),
+    text-shadow:0 0 1.5px rgb(200 200 125),0 0 2.5px rgb(200 200 100),
     1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
     2px 1px 4px rgb(140 140 140),3px 2px 4px rgb(150 150 150),
     2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
@@ -59,7 +63,7 @@ font-size: larger;
 border-style: outset;
 border-width: 2.5px;
     color: white;
-    text-shadow:0 0 1.5px rgb(75 200 75),0 0 2.5px rgb(50 200 50),
+    text-shadow:0 0 1.5px rgb(125 25 125),0 0 2.5px rgb(125 0 125),
     1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
     2px 1px 4px rgb(140 140 140),3px 2px 4px rgb(150 150 150),
     2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
@@ -76,7 +80,7 @@ font-size: larger;
 border-style: outset;
 border-width: 2.5px;
     color: white;
-    text-shadow:0 0 1.5px rgb(75 200 75),0 0 2.5px rgb(50 200 50),
+    text-shadow:0 0 1.5px rgb(225 100 100),0 0 2.5px rgb(225 75 75),
     1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
     2px 1px 4px rgb(140 140 140),3px 2px 4px rgb(150 150 150),
     2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
@@ -99,6 +103,7 @@ border-width: 2.5px;
     2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
 }
 button:active {
+  color: rgb(235,235,235);
   background-color:rgb(195,195,195);
   border-style: inset;
   box-shadow: 0 1px #666;
