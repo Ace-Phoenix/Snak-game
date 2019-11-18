@@ -7,7 +7,7 @@ class Map {
 
   _map(width=10, height=10){
     var retAry = [];
-    var obj = {x:undefined,y:undefined, image:""};
+    var obj = {x:undefined,y:undefined};
     for (var i = 0; i < height; i++) {
       for (var j = 0; j < width; j++) {
         obj = {x:j, y:i}
@@ -27,24 +27,24 @@ class Map {
     var whole = width*height;
     for (var i = 0; i < whole; i++) {
       if (bob[i].y <= 0 || bob[i].x >= width-1) {
-        bob[i].image = "=";
+        bob[i] = "=";
       }else {
-        bob[i].image = "#"
+        bob[i] = "#";
       }
     }
     for (var j = 0; j < whole; j++) {
       if (bob[j].y >= height-1 || bob[j].x <=0) {
-        bob[j].image = "|";//going to need to put a <br> here
+        bob[j] = "|"+ "<br>";
       }
       if (bob[j].y == 0 || bob[j].y == height-1) {
         if (bob[j].x == 0 || bob[j].x == width-1) {
-          bob[j].image = "+";
+          bob[j] = "+";
         }
       }
     }
-    return bob;
+    var llama = bob.toString();
+    return llama;
   }
-
 }
 var joe = new Map
 document.getElementById("map").innerHTML = joe._mapAppear(10, 10)
