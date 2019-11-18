@@ -5,7 +5,7 @@ class Map {
     this.map = this._map;
   }
 
-  _map(width=10, height=10){
+  _map(width, height){
     var retAry = [];
     var obj = {x:undefined,y:undefined, image:""};
     for (var i = 0; i < height; i++) {
@@ -14,6 +14,7 @@ class Map {
         retAry.push(obj);
       }
     }
+    console.log(retAry);
     return retAry;
   }
 //corners start at top left then top right then bottom left then bottom right
@@ -45,5 +46,5 @@ class Map {
     return bob.toString();
   }
 }
-var joe = new Map
-document.getElementById("map").innerHTML = joe._mapAppear(10, 10)
+lol = new Map();
+document.getElementById("map").innerHTML = lol._mapAppear(10,10);
