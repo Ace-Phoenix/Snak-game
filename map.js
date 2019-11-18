@@ -1,33 +1,33 @@
 class Map {
-  constructor(){
-    this.width = this._width;
-    this.height = this._height;
-    this.map = this._map;
+  constructor(width,height){
+    this.width = width;
+    this.height = height;
   }
 
-  _map(width=10, height=10){
+  _map(width, height){
     var retAry = [];
-    var obj = {x:undefined,y:undefined, image:""};
+    var test = [];
     for (var i = 0; i < width; i++) {
       for (var j = 0; j < height; j++) {
-        obj = {x:j, y:i}
+        var obj = {image: ".",x:j, y:i};
         retAry.push(obj);
+        test.push(obj.image);
       }
     }
-    return retAry;
+    return test.join("");
   }
 
 
-  _mapAppear(width=10, length=10){
-    var bob = this._map;
+  _mapAppear(width, length){
+    var bob = this._map(width,length);
     if (bob.x <= 0 || bob.y >= width) {
-      bob.image = "=";
+      bob.image += "=";
     }
     if (bob.x >= length || bob.y <= 0) {
-      bob.image = "|";
+      bob.image += "|";
     }
     return bob;
   }
 }
-var joe = document.getElementsByClassName("snek-map")
-joe.innerHTML = Map._mapAppear;
+lol = new Map();
+document.getElementById("map").innerHTML = lol._mapAppear(10,10);
