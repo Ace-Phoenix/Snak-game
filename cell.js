@@ -14,6 +14,6 @@ class Cell {
   }
 
     toString(){
-      return this.obj;
+      return this.obj.name;
   }
 }
