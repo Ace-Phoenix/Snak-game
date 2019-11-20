@@ -1,18 +1,18 @@
 class Map {
   constructor(data) {
-   this._name = "";
    this._width = undefined;
    this._height = undefined;
    this._cells = this._map(this._width, this._height);
   }
 
   _map(width, height){
-    var f = new Cell(name);
     var retAry = [];
-    var obj = {x:undefined,y:undefined};
     for (var i = 0; i < height; i++) {
       for (var j = 0; j < width; j++) {
         obj = {name:"o",x:j, y:i};
+        let obj = new Cell();
+        obj.obj.x = i;
+        obj.obj.y = j;
         retAry.push(obj);
       }
     }
@@ -51,3 +51,22 @@ class Map {
 }
 var joe = new Map();
 document.getElementById("map").innerHTML = joe._mapAppear(10,10);
+      if (bob[i].obj.y <= 0 || bob[i].obj.x >= width-1) {
+        bob[i].name = "=";
+      }
+      if (bob[i].obj.y >= height-1 || bob[i].obj.x <=0) {
+        bob[i].name = "|<br>";
+      }
+      if (bob[i].obj.y == 0 || bob[i].obj.y == height-1) {
+        if (bob[i].obj.x == 0 || bob[i].obj.x == width-1) {
+          bob[i].name = "+<br>";
+        }
+      }
+    }
+    return bob;
+  }
+
+}
+
+var joe = new Map();
+document.getElementById("map").innerHTML = joe._mapAppear()
