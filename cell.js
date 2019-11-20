@@ -1,7 +1,7 @@
 class Cell {
   constructor(name, type = "map") {
-    this.name = Utils.typeCheck(name, "str", "cell constructor name")
-    this.type = Utils.typeCheck(type, "str", "cell constructor type");
+    this._name = Utils.typeCheck(name, "str", "cell constructor name")
+    this._type = Utils.typeCheck(type, "str", "cell constructor type");
   }
 
   get name(){ return this._name; }
@@ -14,6 +14,6 @@ class Cell {
   }
 
     toString(){
-      return this._name;
+      return this.name;
   }
 }
