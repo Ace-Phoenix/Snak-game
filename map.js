@@ -34,7 +34,7 @@ class Map {
         }
       }
     }
-    return bob;
+    return bob.toString();
   }
 
 }
