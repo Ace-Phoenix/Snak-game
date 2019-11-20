@@ -13,20 +13,22 @@ class Snek{
   set direction(direction){this.direction = direction;}
 }
 //checks for wasd to pushed
-document.addEventListener("keyup", function onKeyUp(event) {
+
+function work(event) {
   var push = {key:undefined};
-    if (event.key === "w") {
-      push = {key:"w"};
-    }
-    if (event.key === "a") {
-       push = {key:"a"};
-    }
-    if (event.key === "s") {
-      push = {key:"s"};
-    }
-    if (event.key === "d") {
-      push = {key:"d"};
-    }
-    console.log(push);
-    return push;
-});
+  if (event.key == "w" || event.key == "W") {
+    push = {key:"w"};
+  }
+  if (event.key == "a" || event.key == "A") {
+    push = {key:"a"};
+  }
+  if (event.key == "s" || event.key =="S") {
+    push = {key:"s"};
+  }
+  if (event.key == "d" || event.key == "D") {
+    push = {key:"d"};
+  }
+  console.log(push);
+  return push;
+}
+document.addEventListener("keyup", work(event.key));
