@@ -1,36 +1,33 @@
 class Map {
-  constructor(){
-    this.width = this._width;
-    this.height = this._height;
-    this.map = this._map;
+  constructor(data) {
+   this._name = "";
+   this._width = undefined;
+   this._height = undefined;
+
+   this._cells = this._map(this._width, this._height);
   }
 
   _map(width, height){
     var retAry = [];
-    var obj = {x:undefined,y:undefined, image:""};
+    var obj = {x:undefined,y:undefined};
     for (var i = 0; i < height; i++) {
       for (var j = 0; j < width; j++) {
-        obj = {x:j, y:i}
+        obj = {x:j, y:i};
         retAry.push(obj);
       }
     }
-    console.log(retAry);
     return retAry;
   }
-//corners start at top left then top right then bottom left then bottom right
-//corner 1 = {x:0, y:0}
-//corner 2 = {x:max-1, y:0}
-//corner 3 = {x:0, y:max-1}
-//corner 4 = {x:max-1, y:max-1}
 
   _mapAppear(width=10, height=10){
     var bob = this._map(width, height);
     var whole = width*height;
     for (var i = 0; i < whole; i++) {
       if (bob[i].y <= 0 || bob[i].x >= width-1) {
-        bob[i] = "=";
+        this._cells._name = "=";
       }
     }
+
     for (var j = 0; j < whole; j++) {
       if (bob[j].y >= height-1 || bob[j].x <=0) {
         bob[j] = "|"+"<br>";//going to need to put a <br> here
@@ -38,13 +35,20 @@ class Map {
       if (bob[j].y == 0 || bob[j].y == height-1) {
         if (bob[j].x == 0 || bob[j].x == width-1) {
           bob[j] = "+" +"<br>";
+        this._cells._name = "|";
+      }
+      if (bob[j].y == 0 || bob[j].y == height-1) {
+        if (bob[j].x == 0 || bob[j].x == width-1) {
+          this._cells._name = "+";
         }
       }else {
-        bob[i] = "#"
+        this._cells._name = "#";
       }
     }
-  return bob
+  return bob;
   }
+
 }
-lol = new Map();
-document.getElementById("map").innerHTML = lol._mapAppear(10,10);
+}
+var joe = new Map();
+document.getElementById("map").innerHTML = joe._mapAppear(10,10);
