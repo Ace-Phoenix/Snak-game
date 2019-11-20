@@ -33,17 +33,17 @@ class Map {
     }
     for (var j = 0; j < whole; j++) {
       if (bob[j].y >= height-1 || bob[j].x <=0) {
-        bob[j] = "|<br>";//going to need to put a <br> here
+        bob[j] = "|"+"<br>";//going to need to put a <br> here
       }
       if (bob[j].y == 0 || bob[j].y == height-1) {
         if (bob[j].x == 0 || bob[j].x == width-1) {
-          bob[j] = "+<br>";
+          bob[j] = "+" +"<br>";
         }
       }else {
         bob[i] = "#"
       }
     }
-    return bob.toString();
+  return bob
   }
 }
 lol = new Map();

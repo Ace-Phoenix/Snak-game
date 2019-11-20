@@ -17,6 +17,16 @@ body{
     2px 0 1.5px rgb(225,100,100),2px 0 2.5px rgb(225,75,75),
     -2px 0 1.5px rgb(125,125,200),-2px 0 2.5px rgb(100,100,200),
     2px 2px 5px white,5px 5px 6px grey;
+    transition: box-shadow 3s ease-out 0s;
+}
+
+.snek-map:hover{
+    box-shadow:
+    0 -1.5px 1.5px rgb(255,255,175),0 -1px 2.5px rgb(240,240,170),
+    1.5px 0 1.5px rgb(125,25,125),1px 0 2.5px rgb(125,0,125),
+    0 1.55px 1.5px rgb(125,125,255),0 1px 2.5px rgb(100,100,233),
+    -1.5px 0 1.5px rgb(225,100,100),-1px 0 2.5px  rgb(225,75,75),
+    2px 2px 5px white,5px 5px 6px grey;
 }
 .snek-heading{
     text-align: center;
