@@ -1,5 +1,5 @@
 class Food {
-  constructor{
+  constructor(type) {
     this._type = type;//different types of food?
   }
   //getters
@@ -8,7 +8,7 @@ class Food {
   //setters
   set type(type){this.type = type;}
 
-  function makeFood(){
+  _makeFood(x, y){
     
   }
 }
