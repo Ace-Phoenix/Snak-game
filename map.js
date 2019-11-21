@@ -12,17 +12,24 @@ class Map {
         obj.obj.x = i;
         obj.obj.y = j;
         retAry.push(obj);
+
       }
     }
     return retAry;
   }
 
-  _mapAppear(width=10, height=10){
+  _mapAppear(width=70, height=45){
     var bob = this._map(width, height);
     var whole = width*height;
     for (var i = 0; i < whole; i++) {
-      if (bob[i].obj.y <= 0 || bob[i].obj.x >= width-1) {
-        bob[i].name = "=";
+      if (bob[i].obj.y <= 0 ) {
+        bob[i].obj.name = "|";
+      }
+      if ( bob[i].obj.x >= height-1 || bob[i].obj.x <=0) {
+        bob[i].obj.name = "=";
+      }
+      if (bob[i].obj.y >= width-1 ) {
+        bob[i].obj.name = "|<br>";
       }
     }
     for (var j = 0; j < whole; j++) {
@@ -31,17 +38,18 @@ class Map {
       }
       if (bob[i].obj.y >= height-1 || bob[i].obj.x <=0) {
         bob[i].name = "|<br>";
+
+      if ((bob[i].obj.y <= 0 && bob[i].obj.x <= 0) || (bob[i].obj.x >= height-1 && bob[i].obj.y >= width-1)||(bob[i].obj.x >= height-1 && bob[i].obj.y <= 0)) {
+        bob[i].obj.name = "+";
       }
-      if (bob[i].obj.y == 0 || bob[i].obj.y == height-1) {
-        if (bob[i].obj.x == 0 || bob[i].obj.x == width-1) {
-          bob[i].name = "+<br>";
-        }
+      if (bob[i].obj.x <= 0 && bob[i].obj.y >= width-1) {
+        bob[i].obj.name = "+<br>";
       }
     }
-    return bob.toString();
+    return bob.join("");
   }
 
 }
-
+}
 var joe = new Map();
 document.getElementById("map").innerHTML = joe._mapAppear();
