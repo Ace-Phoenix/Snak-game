@@ -18,19 +18,19 @@ class Map {
     return retAry;
   }
 
-  _mapAppear(width=10, height=10){
+  _mapAppear(width=45, height=45){
     var bob = this._map(width, height);
     var whole = width*height;
     for (var i = 0; i < whole; i++) {
       if (bob[i].obj.y <= 0 || bob[i].obj.x >= width-1) {
-        bob[i].name = "=";
+        bob[i].obj.name = "=";
       }
       if (bob[i].obj.y >= height-1 || bob[i].obj.x <=0) {
-        bob[i].name = "|<br>";
+        bob[i].obj.name = "|<br>";
       }
       if (bob[i].obj.y == 0 || bob[i].obj.y == height-1) {
         if (bob[i].obj.x == 0 || bob[i].obj.x == width-1) {
-          bob[i].name = "+<br>";
+          bob[i].obj.name = "+<br>";
         }
       }
     }
@@ -40,4 +40,4 @@ class Map {
 }
 
 var joe = new Map();
-document.getElementById("map").innerHTML = joe._mapAppear()
+document.getElementById("map").innerHTML = joe._mapAppear();
