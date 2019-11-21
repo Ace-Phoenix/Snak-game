@@ -13,28 +13,33 @@ class Map {
         obj.obj.x = i;
         obj.obj.y = j;
         retAry.push(obj);
+
       }
     }
     return retAry;
   }
 
-  _mapAppear(width=45, height=45){
+  _mapAppear(width=70, height=45){
     var bob = this._map(width, height);
     var whole = width*height;
     for (var i = 0; i < whole; i++) {
-      if (bob[i].obj.y <= 0 || bob[i].obj.x >= width-1) {
+      if (bob[i].obj.y <= 0 ) {
+        bob[i].obj.name = "|";
+      }
+      if ( bob[i].obj.x >= height-1 || bob[i].obj.x <=0) {
         bob[i].obj.name = "=";
       }
-      if (bob[i].obj.y >= height-1 || bob[i].obj.x <=0) {
+      if (bob[i].obj.y >= width-1 ) {
         bob[i].obj.name = "|<br>";
       }
-      if (bob[i].obj.y == 0 || bob[i].obj.y == height-1) {
-        if (bob[i].obj.x == 0 || bob[i].obj.x == width-1) {
-          bob[i].obj.name = "+<br>";
-        }
+      if ((bob[i].obj.y == 0 && bob[i].obj.x <= 0) || (bob[i].obj.x <= 0 && bob[i].obj.x >= height-1)) {
+        bob[i].obj.name = "+";
+      }
+      if (bob[i].obj.x <= 0 && bob[i].obj.y >= width-1) {
+        bob[i].obj.name = "+<br>"
       }
     }
-    return bob.toString();
+    return bob.join("");
   }
 
 }
