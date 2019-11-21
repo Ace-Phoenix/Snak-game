@@ -32,7 +32,7 @@ class Map {
       if (bob[i].obj.y >= width-1 ) {
         bob[i].obj.name = "|<br>";
       }
-      if ((bob[i].obj.y == 0 && bob[i].obj.x <= 0) || (bob[i].obj.x <= 0 && bob[i].obj.x >= height-1)) {
+      if ((bob[i].obj.y <= 0 && bob[i].obj.x <= 0) || (bob[i].obj.x >= height-1 && bob[i].obj.y >= width-1)||(bob[i].obj.x >= height-1 && bob[i].obj.y <= 0)) {
         bob[i].obj.name = "+";
       }
       if (bob[i].obj.x <= 0 && bob[i].obj.y >= width-1) {
