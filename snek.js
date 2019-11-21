@@ -31,4 +31,4 @@ function work(event) {
   console.log(push);
   return push;
 }
-document.addEventListener("keyup", work(event.key));
+document.addEventListener("keyup", work(event));
