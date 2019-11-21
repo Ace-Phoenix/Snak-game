@@ -1,18 +1,17 @@
 class Map {
   constructor(data) {
-   this._name = "";
    this._width = undefined;
    this._height = undefined;
 
-   this._cells = this._map(this.width, this._height)
   }
 
   _map(width, height){
     var retAry = [];
-    var obj = {x:undefined,y:undefined};
     for (var i = 0; i < height; i++) {
       for (var j = 0; j < width; j++) {
-        obj = {x:j, y:i}
+        let obj = new Cell();
+        obj.obj.x = i;
+        obj.obj.y = j;
         retAry.push(obj);
       }
     }
@@ -23,25 +22,22 @@ class Map {
     var bob = this._map(width, height);
     var whole = width*height;
     for (var i = 0; i < whole; i++) {
-      if (bob[i].y <= 0 || bob[i].x >= width-1) {
-        this.cell.name = "=";
+      if (bob[i].obj.y <= 0 || bob[i].obj.x >= width-1) {
+        bob[i].name = "=";
       }
-    }
-
-    for (var j = 0; j < whole; j++) {
-      if (bob[j].y >= height-1 || bob[j].x <=0) {
-        this.cell.name = "|";
+      if (bob[i].obj.y >= height-1 || bob[i].obj.x <=0) {
+        bob[i].name = "|<br>";
       }
-      if (bob[j].y == 0 || bob[j].y == height-1) {
-        if (bob[j].x == 0 || bob[j].x == width-1) {
-          this.cell.name = "+";
+      if (bob[i].obj.y == 0 || bob[i].obj.y == height-1) {
+        if (bob[i].obj.x == 0 || bob[i].obj.x == width-1) {
+          bob[i].name = "+<br>";
         }
-      }else {
-        this.cell.name = "#";
       }
     }
+    return bob.toString();
   }
 
 }
-var joe = new Map;
-document.getElementById("map").innerHTML = joe._mapAppear(10,10)
+
+var joe = new Map();
+document.getElementById("map").innerHTML = joe._mapAppear()

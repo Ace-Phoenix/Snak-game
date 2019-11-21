@@ -1,11 +1,11 @@
 class Cell {
-  constructor(name, type = "map") {
-    this._name = Utils.typeCheck(name, "str", "cell constructor name")
+  constructor(type = "map") {
+    this._obj = {x:undefined,y:undefined,name:"#"}
     this._type = Utils.typeCheck(type, "str", "cell constructor type");
   }
 
-  get name(){ return this._name; }
-  set name(str){ this._name = Utils.typeCheck(str, "str", "Cell.name");}
+  get obj(){return this._obj}
+
 
   get type(){return this._type}
   set type(type){
@@ -14,6 +14,6 @@ class Cell {
   }
 
     toString(){
-      return this.name;
+      return this.obj.name;
   }
 }
