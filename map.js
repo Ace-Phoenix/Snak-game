@@ -2,13 +2,14 @@ class Map {
   constructor(data) {
    this._width = undefined;
    this._height = undefined;
+
   }
 
   _map(width, height){
     var retAry = [];
     for (var i = 0; i < height; i++) {
       for (var j = 0; j < width; j++) {
-         let obj = new Cell();
+        let obj = new Cell();
         obj.obj.x = i;
         obj.obj.y = j;
         retAry.push(obj);
@@ -31,25 +32,17 @@ class Map {
       if (bob[i].obj.y >= width-1 ) {
         bob[i].obj.name = "|<br>";
       }
-    }
-    for (var j = 0; j < whole; j++) {
-      if (bob[j].obj.y <= 0 || bob[j].obj.x >= width-1) {
-        bob[j].name = "=";
+      if ((bob[i].obj.y <= 0 && bob[i].obj.x <= 0) || (bob[i].obj.x >= height-1 && bob[i].obj.y >= width-1)||(bob[i].obj.x >= height-1 && bob[i].obj.y <= 0)) {
+        bob[i].obj.name = "+";
       }
-      if (bob[j].obj.y >= height-1 || bob[j].obj.x <=0) {
-        bob[j].name = "|<br>";
-
-      if ((bob[j].obj.y <= 0 && bob[j].obj.x <= 0) || (bob[j].obj.x >= height-1 && bob[j].obj.y >= width-1)||(bob[j].obj.x >= height-1 && bob[j].obj.y <= 0)) {
-        bob[j].obj.name = "+";
-      }
-      if (bob[j].obj.x <= 0 && bob[j].obj.y >= width-1) {
-        bob[j].obj.name = "+<br>";
+      if (bob[i].obj.x <= 0 && bob[i].obj.y >= width-1) {
+        bob[i].obj.name = "+<br>"
       }
     }
     return bob.join("");
   }
 
 }
-}
+
 var joe = new Map();
 document.getElementById("map").innerHTML = joe._mapAppear();
