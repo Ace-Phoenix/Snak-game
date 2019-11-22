@@ -1,8 +1,7 @@
 class Map {
   constructor(data) {
-   this._width = undefined;
-   this._height = undefined;
-
+   this._width = undefined;//actually height
+   this._height = undefined;//actually width
   }
 
   _map(width, height){
