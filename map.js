@@ -18,9 +18,9 @@ class Map {
     return retAry;
   }
 
-  _mapAppear(width=70, height=30){
-    var bob = this._map(width, height);
-    var whole = width*height;
+  _mapAppear(width, height){
+    var mapArray = this._map(width, height);
+    var whole = this._width*this._height;
     for (var i = 0; i < whole; i++) {
       if (mapArray[i].obj.y <= 0 ) {
         mapArray[i].obj.name = "|";
@@ -35,7 +35,7 @@ class Map {
         mapArray[i].obj.name = "+";
       }
       if (mapArray[i].obj.x <= 0 && mapArray[i].obj.y >= this._width-1) {
-        mapArray[i].obj.name = "+<br>"
+        mapArray[i].obj.name = "+<br>";
       }
     }
     return mapArray.join("");
