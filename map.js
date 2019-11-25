@@ -3,7 +3,13 @@ class Map {
    this._width = width;//actually height
    this._height = height;//actually width
   }
-
+_passTest(width,height){
+  var test = {
+  w:this._width,
+  h:this._height
+  };
+  return test;
+}
   _map(){
     var retAry = [];
     for (var i = 0; i < this._height; i++) {
@@ -43,5 +49,5 @@ class Map {
 
 }
 
-var nMap = new Map(this._width = 30,this._height = 30);
+var nMap = new Map(50,40);
 document.getElementById("map").innerHTML = nMap._mapAppear();
