@@ -19,7 +19,7 @@ class Map {
     return retAry;
   }
 
-  _mapAppear(width=70, height=45){
+  _mapAppear(width=70, height=30){
     var bob = this._map(width, height);
     var whole = width*height;
     for (var i = 0; i < whole; i++) {
