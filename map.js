@@ -1,13 +1,13 @@
 class Map {
-  constructor(data) {
-   this._width = undefined;//actually height
-   this._height = undefined;//actually width
+  constructor(width, height) {
+   this._width = width;//actually height
+   this._height = height;//actually width
   }
 
-  _map(width, height){
+  _map(){
     var retAry = [];
-    for (var i = 0; i < height; i++) {
-      for (var j = 0; j < width; j++) {
+    for (var i = 0; i < this._height; i++) {
+      for (var j = 0; j < this._width; j++) {
         let obj = new Cell();
         obj.obj.x = i;
         obj.obj.y = j;
@@ -22,26 +22,26 @@ class Map {
     var bob = this._map(width, height);
     var whole = width*height;
     for (var i = 0; i < whole; i++) {
-      if (bob[i].obj.y <= 0 ) {
-        bob[i].obj.name = "|";
+      if (mapArray[i].obj.y <= 0 ) {
+        mapArray[i].obj.name = "|";
       }
-      if ( bob[i].obj.x >= height-1 || bob[i].obj.x <=0) {
-        bob[i].obj.name = "=";
+      if ( mapArray[i].obj.x >= this._height-1 || mapArray[i].obj.x <=0) {
+        mapArray[i].obj.name = "=";
       }
-      if (bob[i].obj.y >= width-1 ) {
-        bob[i].obj.name = "|<br>";
+      if (mapArray[i].obj.y >= this._width-1 ) {
+        mapArray[i].obj.name = "|<br>";
       }
-      if ((bob[i].obj.y <= 0 && bob[i].obj.x <= 0) || (bob[i].obj.x >= height-1 && bob[i].obj.y >= width-1)||(bob[i].obj.x >= height-1 && bob[i].obj.y <= 0)) {
-        bob[i].obj.name = "+";
+      if ((mapArray[i].obj.y <= 0 && mapArray[i].obj.x <= 0) || (mapArray[i].obj.x >= this._height-1 && mapArray[i].obj.y >= this._width-1)||(mapArray[i].obj.x >= this._height-1 && mapArray[i].obj.y <= 0)) {
+        mapArray[i].obj.name = "+";
       }
-      if (bob[i].obj.x <= 0 && bob[i].obj.y >= width-1) {
-        bob[i].obj.name = "+<br>"
+      if (mapArray[i].obj.x <= 0 && mapArray[i].obj.y >= this._width-1) {
+        mapArray[i].obj.name = "+<br>"
       }
     }
-    return bob.join("");
+    return mapArray.join("");
   }
 
 }
 
-var joe = new Map();
-document.getElementById("map").innerHTML = joe._mapAppear();
+var nMap = new Map(this._width = 30,this._height = 30);
+document.getElementById("map").innerHTML = nMap._mapAppear();
