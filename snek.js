@@ -1,7 +1,7 @@
 //checks for wasd to pushed
 
 class Snek {
-  constructor(tst,head,body,direction){
+  constructor(head,body,direction){
     this._head = head;//will have its own grapic mabey a "D"
     this._body = body;//length
     this._direction = direction;//way the snek is moving which is either North, South, East, West
@@ -47,7 +47,7 @@ class Snek {
     }
 }
 //checks for wasd to pushed
-var tst = document.addEventListener("keyup", 
+var tst = document.addEventListener("keyup",
 function work(event) {
   var push = undefined;
   if (event.key == "w" || event.key == "W") {
