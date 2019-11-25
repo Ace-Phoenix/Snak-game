@@ -2,7 +2,7 @@ body{
     border: inset;
     border-radius: 5px;
     height: 625px;
-    background-color: rgb(250 250 255);
+    background-color: rgb(250,250,255);
 }
 .snek-map{
     margin:1px;
@@ -32,10 +32,10 @@ body{
 .snek-heading{
     text-align: center;
     color: white;
-    text-shadow:0 0 1.5px rgb(75 200 75),0 0 2.5px rgb(50 200 50),
+    text-shadow:0 0 1.5px rgb(75,200,75),0 0 2.5px rgb(50,200,50),
     1px 1px 5px white,-1px 1px 5px white,1px -1px 5px white, -1px -1px 5px white,
-    4px 3px 3px rgb(140 140 140),5px 4px 3px rgb(150 150 150),
-    4px 3px 1px rgb(0 45 0),5px 4px 1px rgb(0 100 0);
+    4px 3px 3px rgb(140,140,140),5px 4px 3px rgb(150,150,150),
+    4px 3px 1px rgb(0,45,0),5px 4px 1px rgb(0,100,0);
 }
 .snek-heading-p{
     border: outset;
@@ -81,10 +81,10 @@ font-size: larger;
 border-style: outset;
 border-width: 2.5px;
     color: white;
-    text-shadow:0 0 1.5px rgb(125 25 125),0 0 2.5px rgb(125 0 125),
+    text-shadow:0 0 1.5px rgb(125,25,125),0 0 2.5px rgb(120,0,125),
     1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
-    2px 1px 4px rgb(140 140 140),3px 2px 4px rgb(150 150 150),
-    2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
+    2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
+    2px 1px 1px rgb(0,45,0),3px 2px 1px rgb(0,100,0);
 }
 .rightBTNtop{
 position: fixed;
@@ -98,10 +98,10 @@ font-size: larger;
 border-style: outset;
 border-width: 2.5px;
     color: white;
-    text-shadow:0 0 1.5px rgb(225 100 100),0 0 2.5px rgb(225 75 75),
+    text-shadow:0 0 1.5px rgb(225,100,100),0 0 2.5px rgb(225,75,75),
     1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
-    2px 1px 4px rgb(140 140 140),3px 2px 4px rgb(150 150 150),
-    2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
+    2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
+    2px 1px 1px rgb(0,45,0),3px 2px 1px rgb(0,100,0);
 }
 .rightBTNbottom{
 position: fixed;
@@ -115,10 +115,10 @@ font-size: larger;
 border-style: outset;
 border-width: 2.5px;
     color: white;
-    text-shadow:0 0 1.5px rgb(125 125 200),0 0 2.5px rgb(100 100 200),
+    text-shadow:0 0 1.5px rgb(125,125,200),0 0 2.5px rgb(100,100,200),
     1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
-    2px 1px 4px rgb(140 140 140),3px 2px 4px rgb(150 150 150),
-    2px 1px 1px rgb(0 45 0),3px 2px 1px rgb(0 100 0);
+    2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
+    2px 1px 1px rgb(0,45,0),3px 2px 1px rgb(0,100,0);
 }
 button:active {
   color: rgb(235,235,235);
