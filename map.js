@@ -55,6 +55,10 @@ _passTest(width,height){
           mapArray[i].obj.name = "*";
           mapArray[i].type = "food";
         }
+      //  var newWidth = width/2;
+      //  var newHeight = height/2;
+      //  var snek = new snek(newWidth,newHeight,"O","o","west");
+
       }
     }
     return mapArray.join("");
