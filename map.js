@@ -48,6 +48,36 @@ _passTest(width,height){
   }
 
 }
-
-var nMap = new Map(50,40);
+var w_a1 = 75;
+var h_a1 = 35;
+var nMap = new Map(w_a1,h_a1);
+function sizeUpregW(){
+  w_a1++;
+  return sizeUp(w_a1, h_a1);
+}
+function sizeUpregH(){
+  h_a1++;
+  return sizeUp(w_a1, h_a1);
+}
+function sizeUp(w_a1,h_a1){
+  var nMap = new Map(w_a1,h_a1);
+document.getElementById("map").innerHTML = nMap._mapAppear();
+}
+function sizeDownregW(){
+  if(w_a1 > 4){
+  w_a1--;
+  }
+  return sizeUp(w_a1, h_a1);
+}
+function sizeDownregH(){
+  if(h_a1 > 3){
+  h_a1--;
+  }
+  return sizeUp(w_a1, h_a1);
+  
+}
+function sizeUp(w_a1,h_a1){
+  var nMap = new Map(w_a1,h_a1);
+document.getElementById("map").innerHTML = nMap._mapAppear();
+}
 document.getElementById("map").innerHTML = nMap._mapAppear();
