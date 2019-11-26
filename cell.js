@@ -1,6 +1,6 @@
 class Cell {
   constructor(type = "map") {
-    this._obj = {x:undefined,y:undefined,name:" "}
+    this._obj = {x:undefined,y:undefined,name:" "};
     this._type = Utils.typeCheck(type, "str", "cell constructor type");
   }
 
@@ -10,7 +10,6 @@ class Cell {
   get type(){return this._type;}
   set type(type){
     this._type = Utils.typeCheck(type, "str", "Cell.name");
-    this._snek = Utils.typeCheck(type, "str", "Cell.name");
   }
 
     toString(){
