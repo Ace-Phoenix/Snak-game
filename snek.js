@@ -1,7 +1,7 @@
 //checks for wasd to pushed
 
 class Snek {
-  constructor(tst,head,body,direction){
+  constructor(posX, posY,head,body,direction){
     this._head = head;//will have its own grapic mabey a "D"
     this._body = body;//length
     this._direction = direction;//way the snek is moving which is either North, South, East, West

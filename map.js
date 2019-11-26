@@ -53,14 +53,11 @@ _passTest(width,height){
       if (mapArray[i].obj.x == food.x && mapArray[i].obj.y == food.y) {
         mapArray[i].obj.name = "*";
         mapArray[i].type = "food";
-        
+
       }
     }
-    console.log(mapArray);
     return mapArray.join("");
   }
-
-
 }
 
 var nMap = new Map(this._width = 75,this._height = 30);
