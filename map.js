@@ -24,15 +24,15 @@ _passTest(width,height){
     return retAry;
   }
 
-  _placefood(){
+  _food(){
     var foo = new Food();
     var mFood = foo._makeFood(this._height,this._width);
      return mFood;
   }
 
   _mapAppear(width, height){
-    var food = this._placefood();
     var mapArray = this._map(width, height);
+    var food = this._food();
     var whole = this._width*this._height;
     for (var i = 0; i < whole; i++) {
       if (mapArray[i].obj.y <= 0 ) {
@@ -50,13 +50,13 @@ _passTest(width,height){
       if (mapArray[i].obj.x <= 0 && mapArray[i].obj.y >= this._width-1) {
         mapArray[i].obj.name = "+<br>";
       }
-      if (mapArray[i].obj.x == food.x && mapArray[i].obj.y == food.y) {
-        mapArray[i].obj.name = "*";
-        mapArray[i].type = "food";
-        
+      if (mapArray[i].obj.name == " ") {
+        if (mapArray[i].obj.x == food.x && mapArray[i].obj.y == food.y) {
+          mapArray[i].obj.name = "*";
+          mapArray[i].type = "food";
+        }
       }
     }
-    console.log(mapArray);
     return mapArray.join("");
   }
 
