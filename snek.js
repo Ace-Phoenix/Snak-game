@@ -1,12 +1,11 @@
 //checks for wasd to pushed
 
 class Snek {
-  constructor(posX,posY,head,body,direction){
-    this._head = head;//will have its own grapic mabey a "D"
-    this._body = body;//length
+  constructor(posX,posY,direction){
+    this._head = this._head;//will have its own grapic mabey a "D"
+    this._body = this._body;//length
     this._direction = direction;//way the snek is moving which is either North, South, East, West
-    this._posX = posX;
-    this._posY = posY;
+    this._pos = {x:posX,y:posY}
   }
   //getters
   get body(){return this._body;}
@@ -38,26 +37,29 @@ class Snek {
       return this.constentsMove("West");
     }
   }
+
   constentsMove(directional){
     var map = new Map(40, 30);
     while(directional == "North" && this._posY < map._height){
       if(directional == "North" && this._posY < map._height){
-        this._posY += 1;
+        setInterval((() => this._pos.y += 1), 1000)
+        console.log(this._pos.y)
       }
     }
-    while(directional == "South" && this._posY > 0){
-      if(directional == "South" && this._posY > 0){
-        this._posY -=1;
+    while(directional == "South" && this._pos.y > 0){
+      if(directional == "South" && this._pos.y > 0){
+        this._pos.y -=1;
+        console.log(this.pos)
       }
     }
-    while(directional == "East" && this._posX < map._width){
-      if(directional == "East" && this._posX < map._width){
-        this._posX +=1;
+    while(directional == "East" && this._pos.x < map._width){
+      if(directional == "East" && this._pos.x < map._width){
+        this._pos.x +=1;
       }
     }
-    while(directional == "West" && this._posX > 0){
-      if(directional == "West" && this._posX > 0){
-        this._posX -=1;
+    while(directional == "West" && this._pos.x > 0){
+      if(directional == "West" && this._pos.x > 0){
+        this._pos.x -=1;
       }
     }
   }
