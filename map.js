@@ -3,7 +3,13 @@ class Map {
    this._width = width;//actually height
    this._height = height;//actually width
   }
-
+_passTest(width,height){
+  var test = {
+  w:this._width,
+  h:this._height
+  };
+  return test;
+}
   _map(){
     var retAry = [];
     for (var i = 0; i < this._height; i++) {
@@ -47,6 +53,7 @@ class Map {
       if (mapArray[i].obj.x == food.x && mapArray[i].obj.y == food.y) {
         mapArray[i].obj.name = "*";
         mapArray[i].type = "food";
+        
       }
     }
     console.log(mapArray);
