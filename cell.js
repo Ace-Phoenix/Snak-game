@@ -10,7 +10,6 @@ class Cell {
   get type(){return this._type;}
   set type(type){
     this._type = Utils.typeCheck(type, "str", "Cell.name");
-    this._snek = Utils.typeCheck(type, "str", "Cell.name");
   }
 
     toString(){
