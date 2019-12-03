@@ -48,36 +48,36 @@ _passTest(width,height){
   }
 
 }
-var w_a1 = 75;
-var h_a1 = 35;
-var nMap = new Map(w_a1,h_a1);
+var widthChanger = 75;
+var heightChanger = 35;
+var nMap = new Map(widthChanger,heightChanger);
 function sizeUpregW(){
-  w_a1++;
-  return sizeUp(w_a1, h_a1);
+  widthChanger++;
+  return sizeUp(widthChanger, heightChanger);
 }
 function sizeUpregH(){
-  h_a1++;
-  return sizeUp(w_a1, h_a1);
+  heightChanger++;
+  return sizeUp(widthChanger, heightChanger);
 }
-function sizeUp(w_a1,h_a1){
-  var nMap = new Map(w_a1,h_a1);
+function sizeUp(widthChanger,heightChanger){
+  var nMap = new Map(widthChanger,heightChanger);
 document.getElementById("map").innerHTML = nMap._mapAppear();
 }
 function sizeDownregW(){
-  if(w_a1 > 4){
-  w_a1--;
+  if(widthChanger > 4){
+  widthChanger--;
   }
-  return sizeUp(w_a1, h_a1);
+  return sizeUp(widthChanger, heightChanger);
 }
 function sizeDownregH(){
-  if(h_a1 > 3){
-  h_a1--;
+  if(heightChanger > 3){
+  heightChanger--;
   }
-  return sizeUp(w_a1, h_a1);
+  return sizeUp(widthChanger, heightChanger);
   
 }
-function sizeUp(w_a1,h_a1){
-  var nMap = new Map(w_a1,h_a1);
+function sizeUp(widthChanger,heightChanger){
+  var nMap = new Map(widthChanger,heightChanger);
 document.getElementById("map").innerHTML = nMap._mapAppear();
 }
 document.getElementById("map").innerHTML = nMap._mapAppear();
