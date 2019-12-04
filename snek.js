@@ -1,11 +1,10 @@
-//checks for wasd to pushed
-
+//checks for wasd to pushe
 class Snek {
-  constructor(direction){
+  constructor(){
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length
-    this._direction = direction;//way the snek is moving which is either North, South, East, West
-    this._pos = {x:undefined,y:undefined};
+    this._direction = this._direction;//way the snek is moving which is either North, South, East, West
+    this._pos = {x:10,y:10};//will be wherer the snek is on the map
   }
   //getters
   get body(){return this._body;}
@@ -22,7 +21,7 @@ class Snek {
   directionChange(keyPressed){
     //North
     if(keyPressed == "w"){
-      return this.constentsMove("North");
+      setInterval(this.constentsMove("North"), 1000)
     }
     //South
     if(keyPressed == "s"){
@@ -39,33 +38,23 @@ class Snek {
   }
 
   constentsMove(directional){
-    var map = new Map(40, 30);
-    while(directional == "North" && this._posY < map._height){
       if(directional == "North" && this._posY < map._height){
-        setInterval((() => this._pos.y += 1), 1000)
-        console.log(this._pos.y)
+        this._pos.y += 1, 1000
       }
-    }
-    while(directional == "South" && this._pos.y > 0){
       if(directional == "South" && this._pos.y > 0){
         this._pos.y -=1;
-        console.log(this.pos)
       }
-    }
-    while(directional == "East" && this._pos.x < map._width){
       if(directional == "East" && this._pos.x < map._width){
         this._pos.x +=1;
       }
-    }
-    while(directional == "West" && this._pos.x > 0){
       if(directional == "West" && this._pos.x > 0){
         this._pos.x -=1;
       }
-    }
   }
 }
 //checks for wasd to pushed
-var sneekysneekysnek = new Snek(10,10);
+//
+var sneekysneekysnek = this.pos;
 document.addEventListener("keyup",
 function work(event) {
   var push = undefined;
@@ -81,5 +70,6 @@ function work(event) {
   if (event.key == "d" || event.key == "D") {
     push = "d";
   }
-  return sneekysneekysnek.directionChange(push);
+  var sneks = new Snek();
+  return sneks.directionChange(push);
 });
