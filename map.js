@@ -75,6 +75,12 @@ _passTest(width,height){
           food.y --;
         }
       }
+      var newwidth = Math.floor(this._width/2);
+      var newheight = Math.floor(this._height/2);
+      if (mapArray[i].obj.x == newheight && mapArray[i].obj.y == newwidth) {
+        var snek = new Snek();
+        mapArray[i].obj.name = snek.head;
+      }
     }
     console.log(mapArray);
     return mapArray.join("");
