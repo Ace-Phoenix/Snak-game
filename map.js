@@ -55,8 +55,8 @@ _passTest(width,height){
         mapArray[i].obj.name = "+<br>";
         mapArray[i].type = "corner";
       }
-      if (mapArray[i].type !== "border" || mapArray[i].type !== "corner") {
-        if (mapArray[i].obj.x == food.x && mapArray[i].obj.y == food.y) {
+      if ((mapArray[i].type !== "border") || (mapArray[i].type !== "corner")&&(mapArray[i].obj.x !== 0 && mapArray[i].obj.y !== 0)) {
+        if ((mapArray[i].obj.x !== 0 && mapArray[i].obj.y !== 0) && (mapArray[i].obj.x == food.x) && (mapArray[i].obj.y == food.y)) {
           mapArray[i].obj.name = "*";
           mapArray[i].type = "food";
           console.log(food.x + " x");
