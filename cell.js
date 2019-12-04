@@ -1,5 +1,5 @@
 class Cell {
-  constructor(type = "map") {
+  constructor(type) {
     this._obj = {x:undefined,y:undefined,name:" "};
     this._type = Utils.typeCheck(type, "str", "cell constructor type");
   }
