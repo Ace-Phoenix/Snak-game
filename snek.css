@@ -44,15 +44,16 @@ body{
     margin-left: 550px;
     box-shadow: 0 0 4px;
 }
-.leftBTNtop{
+.start{
 position: fixed;
 top:80%;
-right:15%;
+right:14%;
 width: 55px;
 height: 25px;
 font-family: monospace;
 font-weight: 900;
 font-size: larger;
+background-color:rgba(195,195,195,0.25);
 border-style: outset;
 border-width: 2.5px;
     color: white;
@@ -62,22 +63,23 @@ border-width: 2.5px;
     2px 1px 1px rgb(0,45,0),3px 2px 1px rgb(0,100,0);
       transition: text-shadow 3s ease-in-out 0s;
 }
-.leftBTNtop:hover{
+.start:hover{
     text-shadow:1px 1px 4px rgb(244, 244, 0),1px 1px 5px rgb(211, 211, 19),
-    -1px 0 4px rgb(23, 0, 198),-1px 0 5px rgb(11, 0, 173),
+    -1px 0 4px rgb(38, 211, 0),-1px 0 5px rgb(5, 168, 0),
     1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
     2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
     2px 1px 1px rgb(0,45,0),3px 2px 1px rgb(0,100,0);
 }
-.leftBTNbottom{
+.w{
 position: fixed;
 top:85%;
-right:15%;
-width: 55px;
-height: 25px;
+right:16.6%;
+width: 35px;
+height: 20px;
 font-family: monospace;
 font-weight: 900;
-font-size: larger;
+font-size: 10px;
+background-color:rgba(195,195,195,0.25);
 border-style: outset;
 border-width: 2.5px;
     color: white;
@@ -85,16 +87,51 @@ border-width: 2.5px;
     1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
     2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
     2px 1px 1px rgb(0,45,0),3px 2px 1px rgb(0,100,0);
+  transition: text-shadow 5s ease-in-out 0s;
 }
-.rightBTNtop{
+.w:hover{
+    text-shadow:1px 1px 4px rgb(125,25,125),1px 1px 5px rgb(120,0,125),
+    -1px 0 2px rgb(255, 0, 42),-1px 0 3px rgb(216, 0, 0),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
+    2px 1px 1px rgb(43, 0, 0),3px 2px 1px rgb(99, 0, 0);
+}
+.h{
+position: fixed;
+top:85%;
+right:13.8%;
+width: 35px;
+height: 20px;
+font-family: monospace;
+font-weight: 900;
+font-size: 10px;
+background-color:rgba(195,195,195,0.25);
+border-style: outset;
+border-width: 2.5px;
+    color: white;
+    text-shadow:0 0 1.5px rgb(125,25,125),0 0 2.5px rgb(120,0,125),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
+    2px 1px 1px rgb(0,45,0),3px 2px 1px rgb(0,100,0);
+  transition: text-shadow 5s ease-in-out 0s;
+}
+.h:hover{
+    text-shadow:1px 1px 4px rgb(125,25,125),1px 1px 5px rgb(120,0,125),
+    -1px 0 2px rgb(255, 0, 42),-1px 0 3px rgb(216, 0, 0),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
+    2px 1px 1px rgb(43, 0, 0),3px 2px 1px rgb(99, 0, 0);
+}
+.end{
 position: fixed;
 top:80%;
-right:10%;
+right:9.5%;
 width: 55px;
 height: 25px;
 font-family: monospace;
 font-weight: 900;
 font-size: larger;
+background-color:rgba(195,195,195,0.25);
 border-style: outset;
 border-width: 2.5px;
     color: white;
@@ -102,16 +139,26 @@ border-width: 2.5px;
     1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
     2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
     2px 1px 1px rgb(0,45,0),3px 2px 1px rgb(0,100,0);
+  transition: text-shadow 5s ease-in-out 0s;
 }
-.rightBTNbottom{
+.end:hover{
+    text-shadow:1px 1px 4px rgb(225,100,100),1px 1px 5px rgb(225,75,75),
+    -1px 0 2px rgb(255, 136, 0),-1px 0 3px rgb(255, 196, 68),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
+    2px 1px 1px rgb(40, 26, 0),3px 2px 1px rgb(96, 45, 0);
+}
+
+.w-{
 position: fixed;
 top:85%;
-right:10%;
-width: 55px;
-height: 25px;
+right:11%;
+width: 35px;
+height: 20px;
 font-family: monospace;
 font-weight: 900;
-font-size: larger;
+font-size: 10px;
+background-color:rgba(195,195,195,0.25);
 border-style: outset;
 border-width: 2.5px;
     color: white;
@@ -119,10 +166,45 @@ border-width: 2.5px;
     1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
     2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
     2px 1px 1px rgb(0,45,0),3px 2px 1px rgb(0,100,0);
+  transition: text-shadow 5s ease-in-out 0s;
 }
+.w-:hover{
+    text-shadow:1px 1px 4px rgb(125,125,200),1px 1px 5px rgb(100,100,200),
+    -1px 0 2px rgb(0, 29, 255),-1px 0 3px rgb(0, 127, 255),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
+    2px 1px 1px rgb(0, 37, 38),3px 2px 1px rgb(0, 50, 94);
+}
+.h-{
+position: fixed;
+top:85%;
+right:8.3%;
+width: 35px;
+height: 20px;
+font-family: monospace;
+font-weight: 900;
+font-size: 10px;
+background-color:rgba(195,195,195,0.25);
+border-style: outset;
+border-width: 2.5px;
+    color: white;
+    text-shadow:0 0 1.5px rgb(125,125,200),0 0 2.5px rgb(100,100,200),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
+    2px 1px 1px rgb(0,45,0),3px 2px 1px rgb(0,100,0);
+  transition: text-shadow 5s ease-in-out 0s;
+}
+.h-:hover{
+    text-shadow:1px 1px 4px rgb(125,125,200),1px 1px 5px rgb(100,100,200),
+    -1px 0 2px rgb(0, 29, 255),-1px 0 3px rgb(0, 127, 255),
+    1px 1px 6px white,-1px 1px 6px white,1px -1px 6px white, -1px -1px 6px white,
+    2px 1px 4px rgb(140,140,140),3px 2px 4px rgb(150,150,150),
+    2px 1px 1px rgb(0, 37, 38),3px 2px 1px rgb(0, 50, 94);
+}
+
 button:active {
   color: rgb(235,235,235);
-  background-color:rgb(195,195,195);
+  background-color:rgba(195,195,195,0.05);
   border-style: inset;
   box-shadow: 0 1px #666;
   transform: translateY(2px);
@@ -131,11 +213,11 @@ button:active {
     position: fixed;
     border: inset;
 top:79%;
-right:9.3%;
-width: 135px;
+right:8%;
+width: 155px;
 height: 65px;
 border-radius: 6px;
 box-shadow: 0 0 2.5px grey;
-background-color: white;
+background-color: rgba(255, 255, 255,0.05);
 
 }

@@ -72,6 +72,36 @@ _passTest(width,height){
     return mapArray.join("");
   }
 }
-
-var nMap = new Map(this._width = 75,this._height = 30);
+var widthChanger = 75;
+var heightChanger = 35;
+var nMap = new Map(widthChanger,heightChanger);
+function sizeUpregW(){
+  widthChanger++;
+  return sizeUp(widthChanger, heightChanger);
+}
+function sizeUpregH(){
+  heightChanger++;
+  return sizeUp(widthChanger, heightChanger);
+}
+function sizeUp(widthChanger,heightChanger){
+  var nMap = new Map(widthChanger,heightChanger);
+document.getElementById("map").innerHTML = nMap._mapAppear();
+}
+function sizeDownregW(){
+  if(widthChanger > 4){
+  widthChanger--;
+  }
+  return sizeUp(widthChanger, heightChanger);
+}
+function sizeDownregH(){
+  if(heightChanger > 3){
+  heightChanger--;
+  }
+  return sizeUp(widthChanger, heightChanger);
+  
+}
+function sizeUp(widthChanger,heightChanger){
+  var nMap = new Map(widthChanger,heightChanger);
+document.getElementById("map").innerHTML = nMap._mapAppear();
+}
 document.getElementById("map").innerHTML = nMap._mapAppear();
