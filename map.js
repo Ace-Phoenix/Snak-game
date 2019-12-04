@@ -14,7 +14,7 @@ _passTest(width,height){
     var retAry = [];
     for (var i = 0; i < this._height; i++) {
       for (var j = 0; j < this._width; j++) {
-        let obj = new Cell();
+        let obj = new Cell("map");
         obj.obj.x = i;
         obj.obj.y = j;
         retAry.push(obj);
@@ -37,23 +37,30 @@ _passTest(width,height){
     for (var i = 0; i < whole; i++) {
       if (mapArray[i].obj.y <= 0 ) {
         mapArray[i].obj.name = "|";
+        mapArray[i].type = "border";
       }
       if ( mapArray[i].obj.x >= this._height-1 || mapArray[i].obj.x <=0) {
         mapArray[i].obj.name = "=";
+        mapArray[i].type = "border";
       }
       if (mapArray[i].obj.y >= this._width-1 ) {
         mapArray[i].obj.name = "|<br>";
+        mapArray[i].type = "border";
       }
       if ((mapArray[i].obj.y <= 0 && mapArray[i].obj.x <= 0) || (mapArray[i].obj.x >= this._height-1 && mapArray[i].obj.y >= this._width-1)||(mapArray[i].obj.x >= this._height-1 && mapArray[i].obj.y <= 0)) {
         mapArray[i].obj.name = "+";
+        mapArray[i].type = "corner";
       }
       if (mapArray[i].obj.x <= 0 && mapArray[i].obj.y >= this._width-1) {
         mapArray[i].obj.name = "+<br>";
+        mapArray[i].type = "corner";
       }
-      if (mapArray[i].obj.name == " ") {
+      if (mapArray[i].type !== "border" || mapArray[i].type !== "corner") {
         if (mapArray[i].obj.x == food.x && mapArray[i].obj.y == food.y) {
           mapArray[i].obj.name = "*";
           mapArray[i].type = "food";
+          console.log(food.x + " x");
+          console.log(food.y + " y");
         }
       //  var newWidth = width/2;
       //  var newHeight = height/2;
@@ -61,6 +68,7 @@ _passTest(width,height){
 
       }
     }
+    console.log(mapArray);
     return mapArray.join("");
   }
 }
