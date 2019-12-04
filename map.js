@@ -55,17 +55,25 @@ _passTest(width,height){
         mapArray[i].obj.name = "+<br>";
         mapArray[i].type = "corner";
       }
-      if ((mapArray[i].type !== "border") || (mapArray[i].type !== "corner")&&(mapArray[i].obj.x !== 0 && mapArray[i].obj.y !== 0)) {
-        if ((mapArray[i].obj.x !== 0 && mapArray[i].obj.y !== 0) && (mapArray[i].obj.x == food.x) && (mapArray[i].obj.y == food.y)) {
+      if ((mapArray[i].type !== "border") || (mapArray[i].type !== "corner")) {
+        if (mapArray[i].obj.x == food.x && mapArray[i].obj.y == food.y) {
           mapArray[i].obj.name = "*";
           mapArray[i].type = "food";
           console.log(food.x + " x");
           console.log(food.y + " y");
         }
-      //  var newWidth = width/2;
-      //  var newHeight = height/2;
-      //  var snek = new snek(newWidth,newHeight,"O","o","west");
-
+        if (food.x == 0) {
+          food.x ++;
+        }
+        if (food.y == 0) {
+          food.y ++;
+        }
+        if (food.x == this._height-1) {
+          food.x --;
+        }
+        if (food.y == this.width-1) {
+          food.y --;
+        }
       }
     }
     console.log(mapArray);
@@ -98,7 +106,7 @@ function sizeDownregH(){
   heightChanger--;
   }
   return sizeUp(widthChanger, heightChanger);
-  
+
 }
 function sizeUp(widthChanger,heightChanger){
   var nMap = new Map(widthChanger,heightChanger);
