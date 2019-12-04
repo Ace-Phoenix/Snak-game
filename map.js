@@ -71,7 +71,7 @@ _passTest(width,height){
         if (food.x == this._height-1) {
           food.x --;
         }
-        if (food.y == this.width-1) {
+        if (food.y == this._width-1) {
           food.y --;
         }
       }
