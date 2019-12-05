@@ -1,5 +1,5 @@
-//checks for wasd to pushe
-class Snek {
+//checks for wasd to push
+class Snek extends Map {
   constructor(){
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length
@@ -10,8 +10,7 @@ class Snek {
   get head(){return this._head}
   get body(){return this._body;}
   get direction(){return this._direction;}
-  get posX(){return this._posX;}
-  get posY(){return this._posY;}
+  get pos(){return this._pos;}
 
   //setters
   set body(length){this._body = length;}
@@ -38,9 +37,9 @@ class Snek {
     }
   }
 
-  constentsMove(directional){
+  _constentsMove(directional){
       if(directional == "North" && this._posY < map._height){
-        this._pos.y += 1, 1000
+        this._pos.y += 1;
       }
       if(directional == "South" && this._pos.y > 0){
         this._pos.y -=1;
@@ -52,7 +51,11 @@ class Snek {
         this._pos.x -=1;
       }
   }
+  _overlap(){
+
+  }
 }
+//what is jakes gitname
 //checks for wasd to pushed
 //
 var sneekysneekysnek = this.pos;
@@ -71,6 +74,7 @@ function work(event) {
   if (event.key == "d" || event.key == "D") {
     push = "d";
   }
+  //in the five fucking minets he had my computer
   var sneks = new Snek();
   return sneks.directionChange(push);
 });
