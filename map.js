@@ -73,9 +73,9 @@ _passTest(width,height){
           food.y --;
         }
       }
-      var newwidth = Math.floor(this._width/2);
-      var newheight = Math.floor(this._height/2);
-      var snek = new Snek();
+    var newwidth = Math.floor(this._width/2);
+    var newheight = Math.floor(this._height/2);
+    var snek = new Snek();
       if (mapArray[i].obj.x == newheight && mapArray[i].obj.y == newwidth) {
         mapArray[i].obj.name = snek.head;
         mapArray[i].type = "snek head";
