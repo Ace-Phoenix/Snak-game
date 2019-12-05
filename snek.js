@@ -7,7 +7,7 @@ class Snek extends Map {
     this._pos = {x:undefined,y:undefined};//will be wherer the snek is on the map
   }
   //getters
-  get head(){return this._head}
+  get head(){return this._head;}
   get body(){return this._body;}
   get direction(){return this._direction;}
   get pos(){return this._pos;}
@@ -21,7 +21,7 @@ class Snek extends Map {
   directionChange(keyPressed){
     //North
     if(keyPressed == "w"){
-      setInterval(this.constentsMove("North"), 1000)
+      return this.constentsMove("North");
     }
     //South
     if(keyPressed == "s"){
@@ -37,19 +37,28 @@ class Snek extends Map {
     }
   }
 
+<<<<<<< HEAD
   _constentsMove(directional){
       if(directional == "North" && this._posY < map._height){
+=======
+  constentsMove(directional){
+    setInterval(function(){
+      if(directional == "North" && this._pos.y){
+>>>>>>> master
         this._pos.y += 1;
       }
-      if(directional == "South" && this._pos.y > 0){
+      if(directional == "South" && this._pos.y){
         this._pos.y -=1;
       }
-      if(directional == "East" && this._pos.x < map._width){
+      if(directional == "East" && this._pos.x){
         this._pos.x +=1;
       }
-      if(directional == "West" && this._pos.x > 0){
+      if(directional == "West" && this._pos.x){
         this._pos.x -=1;
       }
+      console.log(this._pos.x);
+      console.log(this._pos.y);
+      }, 1000);
   }
   _overlap(){
 
