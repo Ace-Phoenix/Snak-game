@@ -37,14 +37,10 @@ class Snek extends Map {
     }
   }
 
-<<<<<<< HEAD
+
   _constentsMove(directional){
-      if(directional == "North" && this._posY < map._height){
-=======
-  constentsMove(directional){
     setInterval(function(){
       if(directional == "North" && this._pos.y){
->>>>>>> master
         this._pos.y += 1;
       }
       if(directional == "South" && this._pos.y){
