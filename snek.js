@@ -71,5 +71,5 @@ function work(event) {
     push = "d";
   }
   var sneks = new Snek();
-  return sneks.directionChange(push);
+  setInterval(sneks.directionChange(push), 1000);
 });
