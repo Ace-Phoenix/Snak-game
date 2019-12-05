@@ -37,36 +37,26 @@ class Snek {
   }
 
   constentsMove(directional){
-          var tst = new Snek();
-    if(directional == "North"){
-    setInterval(function(){
       if(directional == "North"){
-        tst.pos.y += 1;
+        this.pos.y += 1;
+            console.log(this.pos);
+
       }
-    }, 1000);
-    }
-  if(directional == "South"){
-    setInterval(function(){
       if(directional == "South"){
-        tst.pos.y -=1;
+        this.pos.y -=1;
+            console.log(this.pos);
+
       }
-    }, 1000);
-  }
-  if(directional == "East"){
-    setInterval(function(){
       if(directional == "East"){
-        tst.pos.x +=1;
+        this.pos.x +=1;
+            console.log(this.pos);
+
       }
-    }, 1000);
-  }
-  if(directional == "West"){
-    setInterval(function(){
       if(directional == "West"){
-        tst.pos.x -=1;
+        this.pos.x -=1;
+            console.log(this.pos);
+
       }
-      console.log(tst.pos);
-    }, 1000);
-  }
 }
   _overlap(){
 
@@ -75,9 +65,11 @@ class Snek {
 //what is jakes gitname
 //checks for wasd to pushed
 //
-var sneekysneekysnek = this.pos;
-document.addEventListener("keyup",
-function work(event) {
+
+
+  var sneks = new Snek();
+  document.addEventListener("keyup", function work(event){
+var seting = setInterval(function(){
   var push = undefined;
   if (event.key == "w" || event.key == "W") {
     push = "w";
@@ -92,6 +84,6 @@ function work(event) {
     push = "d";
   }
   //in the five fucking minets he had my computer
-  var sneks = new Snek();
-  return sneks.directionChange(push);
+return sneks.directionChange(push);
+},1000);
 });
