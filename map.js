@@ -81,7 +81,6 @@ _passTest(width,height){
         mapArray[i].type = "snek head";
       }
       if (mapArray[i].obj.x == newheight && mapArray[i].obj.y == newwidth+1) {
-        console.log(snek.body);
         mapArray[i].obj.name = snek.body;
         mapArray[i].type = "snek body";
       }
@@ -89,7 +88,21 @@ _passTest(width,height){
     console.log(mapArray);
     return mapArray.join("");
   }
+
+  _snekLoc(width,height){
+    var mapArray = this._mapAppear(width, height);
+    console.log(mapArray);
+    var whole = this._width*this._height;
+    for (var i = 0; i < whole; i++) {
+      if (mapArray[i].type == "snek head") {
+        return true;
+      }else {return false;}
+    }
+  }
+
 }
+
+
 var widthChanger = 75;
 var heightChanger = 35;
 var nMap = new Map(widthChanger,heightChanger);
