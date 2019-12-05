@@ -59,8 +59,6 @@ _passTest(width,height){
         if (mapArray[i].obj.x == food.x && mapArray[i].obj.y == food.y) {
           mapArray[i].obj.name = "*";
           mapArray[i].type = "food";
-          console.log(food.x + " x");
-          console.log(food.y + " y");
         }
         if (food.x == 0) {
           food.x ++;
@@ -71,9 +69,21 @@ _passTest(width,height){
         if (food.x == this._height-1) {
           food.x --;
         }
-        if (food.y == this.width-1) {
+        if (food.y == this._width-1) {
           food.y --;
         }
+      }
+      var newwidth = Math.floor(this._width/2);
+      var newheight = Math.floor(this._height/2);
+      var snek = new Snek();
+      if (mapArray[i].obj.x == newheight && mapArray[i].obj.y == newwidth) {
+        mapArray[i].obj.name = snek.head;
+        mapArray[i].type = "snek head";
+      }
+      if (mapArray[i].obj.x == newheight && mapArray[i].obj.y == newwidth+1) {
+        console.log(snek.body);
+        mapArray[i].obj.name = snek.body;
+        mapArray[i].type = "snek body";
       }
     }
     console.log(mapArray);
