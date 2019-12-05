@@ -15,8 +15,7 @@ class Snek extends Map {
   //setters
   set body(length){this._body = length;}
   set direction(direction){this.direction = direction;}
-  set posX(posX){this._posX = posX;}
-  set posY(posY){this._posY = posY;}
+  set pos(pos){this._pos = pos;}
 
   directionChange(keyPressed){
     //North
@@ -37,14 +36,9 @@ class Snek extends Map {
     }
   }
 
-<<<<<<< HEAD
-  _constentsMove(directional){
-      if(directional == "North" && this._posY < map._height){
-=======
   constentsMove(directional){
     setInterval(function(){
       if(directional == "North" && this._pos.y){
->>>>>>> master
         this._pos.y += 1;
       }
       if(directional == "South" && this._pos.y){
