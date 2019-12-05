@@ -1,5 +1,5 @@
-//checks for wasd to pushe
-class Snek {
+//checks for wasd to push
+class Snek extends Map {
   constructor(){
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length
@@ -7,11 +7,10 @@ class Snek {
     this._pos = {x:undefined,y:undefined};//will be wherer the snek is on the map
   }
   //getters
-  get head(){return this._head}
+  get head(){return this._head;}
   get body(){return this._body;}
   get direction(){return this._direction;}
-  get posX(){return this._posX;}
-  get posY(){return this._posY;}
+  get pos(){return this._pos;}
 
   //setters
   set body(length){this._body = length;}
@@ -22,7 +21,7 @@ class Snek {
   directionChange(keyPressed){
     //North
     if(keyPressed == "w"){
-      setInterval(this.constentsMove("North"), 1000)
+      return this.constentsMove("North");
     }
     //South
     if(keyPressed == "s"){
@@ -38,21 +37,30 @@ class Snek {
     }
   }
 
-  constentsMove(directional){
-      if(directional == "North" && this._posY < map._height){
-        this._pos.y += 1, 1000
+
+  _constentsMove(directional){
+    setInterval(function(){
+      if(directional == "North" && this._pos.y){
+        this._pos.y += 1;
       }
-      if(directional == "South" && this._pos.y > 0){
+      if(directional == "South" && this._pos.y){
         this._pos.y -=1;
       }
-      if(directional == "East" && this._pos.x < map._width){
+      if(directional == "East" && this._pos.x){
         this._pos.x +=1;
       }
-      if(directional == "West" && this._pos.x > 0){
+      if(directional == "West" && this._pos.x){
         this._pos.x -=1;
       }
+      console.log(this._pos.x);
+      console.log(this._pos.y);
+      }, 1000);
+  }
+  _overlap(){
+
   }
 }
+//what is jakes gitname
 //checks for wasd to pushed
 //
 var sneekysneekysnek = this.pos;
@@ -71,6 +79,7 @@ function work(event) {
   if (event.key == "d" || event.key == "D") {
     push = "d";
   }
+  //in the five fucking minets he had my computer
   var sneks = new Snek();
   return sneks.directionChange(push);
 });
