@@ -1,5 +1,5 @@
 //checks for wasd to push
-class Snek extends Map {
+class Snek extends Map{
   constructor(){
     super()
     this._head = "O";//will have its own grapic mabey a "D"
@@ -16,8 +16,7 @@ class Snek extends Map {
   //setters
   set body(length){this._body = length;}
   set direction(direction){this.direction = direction;}
-  set posX(posX){this._posX = posX;}
-  set posY(posY){this._posY = posY;}
+  set pos(pos){this._pos = pos;}
 
   directionChange(keyPressed){
     //North
@@ -38,35 +37,46 @@ class Snek extends Map {
     }
   }
 
+  constentsMove(directional){
+      if(directional == "North"){
+        this.pos.y += 1;
+            console.log(this.pos);
 
-  _constentsMove(directional){
-    setInterval(function(){
-      if(directional == "North" && this._pos.y){
-        this._pos.y += 1;
       }
-      if(directional == "South" && this._pos.y){
-        this._pos.y -=1;
+      if(directional == "South"){
+        this.pos.y -=1;
+            console.log(this.pos);
+
       }
-      if(directional == "East" && this._pos.x){
-        this._pos.x +=1;
+      if(directional == "East"){
+        this.pos.x +=1;
+            console.log(this.pos);
+
       }
-      if(directional == "West" && this._pos.x){
-        this._pos.x -=1;
+      if(directional == "West"){
+        this.pos.x -=1;
+            console.log(this.pos);
+
       }
-      console.log(this._pos.x);
-      console.log(this._pos.y);
-      }, 1000);
   }
-  _overlap(){
-
+  _overlap(direction){
+    var nextMove = 10;
+    var bodyLoc = 10;//wating on jake;
+    if (nextMove = bodyLoc){
+      //end game....... Kinda really just makes snek invisible
+      this._head = " ";
+      this._body = " ";
+    }
   }
 }
 //what is jakes gitname
 //checks for wasd to pushed
 //
-var sneekysneekysnek = this.pos;
-document.addEventListener("keyup",
-function work(event) {
+
+
+  var sneks = new Snek();
+  document.addEventListener("keyup", function work(event){
+var seting = setInterval(function(){
   var push = undefined;
   if (event.key == "w" || event.key == "W") {
     push = "w";
@@ -81,6 +91,6 @@ function work(event) {
     push = "d";
   }
   //in the five fucking minets he had my computer
-  var sneks = new Snek();
-  return sneks.directionChange(push);
+return sneks.directionChange(push);
+},1000);
 });
