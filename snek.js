@@ -57,7 +57,19 @@ class Snek extends Map{
   }
 
   _overlap(direction){
-    var nextMove = undefined;
+    var nextMove = this.pos;
+    if (direction == "North"){
+      nextMove.y ++;
+    }
+    else if(direction == "South"){
+      nextMove.y --;
+    }
+    else if(direction == "East"){
+      nextMove.x ++;
+    }
+    else if(direction == "West"){
+      nextMove.x --;
+    }
     var bodyLoc = Map._snekLoc();//wating on jake;
     if (nextMove == bodyLoc){
       //end game....... Kinda really just makes snek invisible
