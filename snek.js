@@ -1,5 +1,5 @@
 //checks for wasd to push
-class Snek {
+class Snek extends Map{
   constructor(){
     super()
     this._head = "O";//will have its own grapic mabey a "D"
@@ -58,9 +58,15 @@ class Snek {
             console.log(this.pos);
 
       }
-}
-  _overlap(){
-
+  }
+  _overlap(direction){
+    var nextMove = 10;
+    var bodyLoc = 10;//wating on jake;
+    if (nextMove = bodyLoc){
+      //end game....... Kinda really just makes snek invisible
+      this._head = " ";
+      this._body = " ";
+    }
   }
 }
 //what is jakes gitname
