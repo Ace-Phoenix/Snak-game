@@ -41,24 +41,21 @@ class Snek extends Map{
       if(directional == "North"){
         this.pos.y += 1;
             console.log(this.pos);
-
       }
       if(directional == "South"){
         this.pos.y -=1;
             console.log(this.pos);
-
       }
       if(directional == "East"){
         this.pos.x +=1;
             console.log(this.pos);
-
       }
       if(directional == "West"){
         this.pos.x -=1;
             console.log(this.pos);
-
       }
   }
+
   _overlap(direction){
     var nextMove = 10;
     var bodyLoc = 10;//wating on jake;
@@ -74,23 +71,22 @@ class Snek extends Map{
 //
 
 
-  var sneks = new Snek();
-  document.addEventListener("keyup", function work(event){
-var seting = setInterval(function(){
-  var push = undefined;
-  if (event.key == "w" || event.key == "W") {
-    push = "w";
-  }
-  if (event.key == "a" || event.key == "A") {
-    push = "a";
-  }
-  if (event.key == "s" || event.key =="S") {
-    push = "s";
-  }
-  if (event.key == "d" || event.key == "D") {
-    push = "d";
-  }
-  //in the five fucking minets he had my computer
-return sneks.directionChange(push);
-},1000);
+var sneks = new Snek();
+document.addEventListener("keyup", function work(event){
+  var seting = setInterval(function(){
+    var push = undefined;
+    if (event.key == "w" || event.key == "W") {
+      push = "w";
+    }
+    if (event.key == "a" || event.key == "A") {
+      push = "a";
+    }
+    if (event.key == "s" || event.key =="S") {
+      push = "s";
+    }
+    if (event.key == "d" || event.key == "D") {
+      push = "d";
+    }
+    return sneks.directionChange(push);
+  },1000);
 });
