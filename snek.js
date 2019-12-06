@@ -1,11 +1,10 @@
 //checks for wasd to push
 class Snek {
   constructor(){
-    super()
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length
     this._direction = this._direction;//way the snek is moving which is either North, South, East, West
-    this._pos = {x:undefined,y:undefined};//will be wherer the snek is on the map
+    this._pos = {x:77,y:77};//will be wherer the snek is on the map
 }
   //getters
   get head(){return this._head;}
@@ -17,48 +16,6 @@ class Snek {
   set body(length){this._body = length;}
   set direction(direction){this.direction = direction;}
   set pos(pos){this._pos = pos;}
-
-  directionChange(keyPressed){
-    //North
-    if(keyPressed == "w"){
-      return this.constentsMove("North");
-    }
-    //South
-    if(keyPressed == "s"){
-      return this.constentsMove("South");
-    }
-    //East
-    if(keyPressed == "d"){
-      return this.constentsMove("East");
-    }
-    //West
-    if(keyPressed == "a"){
-      return this.constentsMove("West");
-    }
-  }
-
-  constentsMove(directional){
-      if(directional == "North"){
-        this.pos.y += 1;
-            console.log(this.pos);
-
-      }
-      if(directional == "South"){
-        this.pos.y -=1;
-            console.log(this.pos);
-
-      }
-      if(directional == "East"){
-        this.pos.x +=1;
-            console.log(this.pos);
-
-      }
-      if(directional == "West"){
-        this.pos.x -=1;
-            console.log(this.pos);
-
-      }
-}
   _overlap(){
 
   }
@@ -67,10 +24,8 @@ class Snek {
 //checks for wasd to pushed
 //
 
-
-  var sneks = new Snek();
+      var sneks = new Snek();
   document.addEventListener("keyup", function work(event){
-var seting = setInterval(function(){
   var push = undefined;
   if (event.key == "w" || event.key == "W") {
     push = "w";
@@ -85,6 +40,52 @@ var seting = setInterval(function(){
     push = "d";
   }
   //in the five fucking minets he had my computer
-return sneks.directionChange(push);
-},1000);
+  return inter(push);
 });
+function inter(rep){
+  var gameplay=0
+  while(gameplay<=100){
+  if(rep == "w"){
+      constentsMove(rep);
+      gameplay++
+  }
+   else if(rep == "s"){
+      constentsMove(rep);
+      gameplay++
+  }
+  else if(rep == "d"){
+      constentsMove(rep);
+      gameplay++
+  }
+  else if(rep == "a"){
+      constentsMove(rep);
+      gameplay++
+  }
+  else{
+    return "not ready";
+  }
+}
+}
+ function constentsMove(directional){
+    setTimeout(function(){
+        if(directional == "w"){
+        sneks.pos.y += 1;
+            console.log(sneks.pos);
+
+        }
+        if(directional == "s"){
+        sneks.pos.y -=1;
+            console.log(sneks.pos);
+
+        }
+        if(directional == "d"){
+        sneks.pos.x +=1;
+            console.log(sneks.pos);
+
+        }
+        if(directional == "a"){
+          sneks.pos.x -=1;
+            console.log(sneks.pos);
+        }
+    },5000);
+  }
