@@ -56,7 +56,8 @@ class Snek extends Map{
       }
   }
 
-  _overlap(direction){
+  _overlap(){
+    var direction = this.direction;
     var nextMove = this.pos;
     if (direction == "North"){
       nextMove.y ++;
