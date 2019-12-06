@@ -60,16 +60,16 @@ class Snek extends Map{
       }
   }
   _overlap(direction){
-    var nextMove = 10;
-    var bodyLoc = 10;//wating on jake;
-    if (nextMove = bodyLoc){
+    var nextMove = undefined;
+    var bodyLoc = Map._snekLoc();//wating on jake;
+    if (nextMove == bodyLoc){
       //end game....... Kinda really just makes snek invisible
       this._head = " ";
       this._body = " ";
     }
   }
 }
-//what is jakes gitname
+
 //checks for wasd to pushed
 //
 
@@ -90,7 +90,7 @@ var seting = setInterval(function(){
   if (event.key == "d" || event.key == "D") {
     push = "d";
   }
-  //in the five fucking minets he had my computer
+
 return sneks.directionChange(push);
 },1000);
 });
