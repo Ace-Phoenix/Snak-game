@@ -14,7 +14,6 @@ class Map {
         obj.obj.x = i;
         obj.obj.y = j;
         retAry.push(obj);
-
       }
     }
     return retAry;
@@ -80,20 +79,27 @@ class Map {
         this._maps[i].type = "snek body";
       }
     }
-    console.log(this._maps+"here");
     return this._maps.join("");
   }
 
   _snekLoc(width,height){
     var whole = this._width*this._height;
     var snek = new Snek();
-    var retAry = [{x:undefined,y:undefined}]
+    var retAry = [{x:undefined,y:undefined,type:undefined},{x:undefined,y:undefined,type:undefined}];
     for (var i = 0; i < 2625; i++) {
       if (nMap._maps[i].type == "snek head") {
         snek.pos.x = this._maps[i].obj.x;
         snek.pos.y = this._maps[i].obj.y;
         retAry[0].x = snek.pos.x;
         retAry[0].y = snek.pos.y;
+        retAry[0].type = "snek head";
+      }
+      if (nMap._maps[i].type == "snek body") {
+        snek.pos.x = this._maps[i].obj.x;
+        snek.pos.y = this._maps[i].obj.y;
+        retAry[1].x = snek.pos.x;
+        retAry[1].y = snek.pos.y;
+        retAry[1].type = "snek body";
       }
     }
     return retAry;

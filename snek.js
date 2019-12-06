@@ -70,7 +70,7 @@ class Snek extends Map{
     else if(direction == "West"){
       nextMove.x --;
     }
-    var bodyLoc = Map._snekLoc();//wating on jake;
+    var bodyLoc = Map._snekLoc();
     if (nextMove == bodyLoc){
       //end game....... Kinda really just makes snek invisible
       this._head = " ";
@@ -80,7 +80,6 @@ class Snek extends Map{
 }
 
 //checks for wasd to pushed
-//
 
 
 var sneks = new Snek();
