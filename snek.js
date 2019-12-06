@@ -1,5 +1,5 @@
 //checks for wasd to push
-class Snek {
+class Snek extends Map{
   constructor(){
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length
@@ -16,13 +16,32 @@ class Snek {
   set body(length){this._body = length;}
   set direction(direction){this.direction = direction;}
   set pos(pos){this._pos = pos;}
-  _overlap(){
 
+  _overlap(){
+    var direction = this.direction;
+    var nextMove = this.pos;
+    if (direction == "North"){
+      nextMove.y ++;
+    }
+    else if(direction == "South"){
+      nextMove.y --;
+    }
+    else if(direction == "East"){
+      nextMove.x ++;
+    }
+    else if(direction == "West"){
+      nextMove.x --;
+    }
+    var bodyLoc = Map._snekLoc();
+    if (nextMove == bodyLoc){
+      //end game....... Kinda really just makes snek invisible
+      this._head = " ";
+      this._body = " ";
+    }
   }
 }
-//what is jakes gitname
+
 //checks for wasd to pushed
-//
 
       var sneks = new Snek();
   document.addEventListener("keyup", function work(event){
@@ -41,7 +60,7 @@ class Snek {
   }
   //in the five fucking minets he had my computer
   return inter(push);
-});
+  }
 function inter(rep){
   var gameplay=0
   while(gameplay<=100){

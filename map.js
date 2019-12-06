@@ -2,15 +2,11 @@ class Map {
   constructor(width, height) {
    this._width = width;//actually height
    this._height = height;//actually width
+   this._maps = this._map(width,height);
   }
-_passTest(width,height){
-  var test = {
-  w:this._width,
-  h:this._height
-  };
-  return test;
-}
-  _map(){
+
+
+  _map(width,height){
     var retAry = [];
     for (var i = 0; i < this._height; i++) {
       for (var j = 0; j < this._width; j++) {
@@ -18,7 +14,6 @@ _passTest(width,height){
         obj.obj.x = i;
         obj.obj.y = j;
         retAry.push(obj);
-
       }
     }
     return retAry;
@@ -31,34 +26,33 @@ _passTest(width,height){
   }
 
   _mapAppear(width, height){
-    var mapArray = this._map(width, height);
     var food = this._food();
     var whole = this._width*this._height;
     for (var i = 0; i < whole; i++) {
-      if (mapArray[i].obj.y <= 0 ) {
-        mapArray[i].obj.name = "|";
-        mapArray[i].type = "border";
+      if (this._maps[i].obj.y <= 0 ) {
+        this._maps[i].obj.name = "|";
+        this._maps[i].type = "border";
       }
-      if ( mapArray[i].obj.x >= this._height-1 || mapArray[i].obj.x <=0) {
-        mapArray[i].obj.name = "=";
-        mapArray[i].type = "border";
+      if ( this._maps[i].obj.x >= this._height-1 || this._maps[i].obj.x <=0) {
+        this._maps[i].obj.name = "=";
+        this._maps[i].type = "border";
       }
-      if (mapArray[i].obj.y >= this._width-1 ) {
-        mapArray[i].obj.name = "|<br>";
-        mapArray[i].type = "border";
+      if (this._maps[i].obj.y >= this._width-1 ) {
+        this._maps[i].obj.name = "|<br>";
+        this._maps[i].type = "border";
       }
-      if ((mapArray[i].obj.y <= 0 && mapArray[i].obj.x <= 0) || (mapArray[i].obj.x >= this._height-1 && mapArray[i].obj.y >= this._width-1)||(mapArray[i].obj.x >= this._height-1 && mapArray[i].obj.y <= 0)) {
-        mapArray[i].obj.name = "+";
-        mapArray[i].type = "corner";
+      if ((this._maps[i].obj.y <= 0 && this._maps[i].obj.x <= 0) || (this._maps[i].obj.x >= this._height-1 && this._maps[i].obj.y >= this._width-1)||(this._maps[i].obj.x >= this._height-1 && this._maps[i].obj.y <= 0)) {
+        this._maps[i].obj.name = "+";
+        this._maps[i].type = "corner";
       }
-      if (mapArray[i].obj.x <= 0 && mapArray[i].obj.y >= this._width-1) {
-        mapArray[i].obj.name = "+<br>";
-        mapArray[i].type = "corner";
+      if (this._maps[i].obj.x <= 0 && this._maps[i].obj.y >= this._width-1) {
+        this._maps[i].obj.name = "+<br>";
+        this._maps[i].type = "corner";
       }
-      if ((mapArray[i].type !== "border") || (mapArray[i].type !== "corner")) {
-        if (mapArray[i].obj.x == food.x && mapArray[i].obj.y == food.y) {
-          mapArray[i].obj.name = "*";
-          mapArray[i].type = "food";
+      if ((this._maps[i].type !== "border") || (this._maps[i].type !== "corner")) {
+        if (this._maps[i].obj.x == food.x && this._maps[i].obj.y == food.y) {
+          this._maps[i].obj.name = "*";
+          this._maps[i].type = "food";
         }
         if (food.x == 0) {
           food.x ++;
@@ -76,30 +70,40 @@ _passTest(width,height){
     var newwidth = Math.floor(this._width/2);
     var newheight = Math.floor(this._height/2);
     var snek = new Snek();
-      if (mapArray[i].obj.x == newheight && mapArray[i].obj.y == newwidth) {
-        mapArray[i].obj.name = snek.head;
-        mapArray[i].type = "snek head";
+      if (this._maps[i].obj.x == newheight && this._maps[i].obj.y == newwidth) {
+        this._maps[i].obj.name = snek.head;
+        this._maps[i].type = "snek head";
       }
-      if (mapArray[i].obj.x == newheight && mapArray[i].obj.y == newwidth+1) {
-        mapArray[i].obj.name = snek.body;
-        mapArray[i].type = "snek body";
+      if (this._maps[i].obj.x == newheight && this._maps[i].obj.y == newwidth+1) {
+        this._maps[i].obj.name = snek.body;
+        this._maps[i].type = "snek body";
       }
     }
-    console.log(mapArray);
-    return mapArray.join("");
+    return this._maps.join("");
   }
 
   _snekLoc(width,height){
-    var mapArray = this._mapAppear(width, height);
-    console.log(mapArray);
     var whole = this._width*this._height;
-    for (var i = 0; i < whole; i++) {
-      if (mapArray[i].type == "snek head") {
-        return true;
-      }else {return false;}
+    var snek = new Snek();
+    var retAry = [{x:undefined,y:undefined,type:undefined},{x:undefined,y:undefined,type:undefined}];
+    for (var i = 0; i < 2625; i++) {
+      if (nMap._maps[i].type == "snek head") {
+        snek.pos.x = this._maps[i].obj.x;
+        snek.pos.y = this._maps[i].obj.y;
+        retAry[0].x = snek.pos.x;
+        retAry[0].y = snek.pos.y;
+        retAry[0].type = "snek head";
+      }
+      if (nMap._maps[i].type == "snek body") {
+        snek.pos.x = this._maps[i].obj.x;
+        snek.pos.y = this._maps[i].obj.y;
+        retAry[1].x = snek.pos.x;
+        retAry[1].y = snek.pos.y;
+        retAry[1].type = "snek body";
+      }
     }
+    return retAry;
   }
-
 }
 
 
