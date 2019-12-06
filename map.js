@@ -10,7 +10,7 @@ _passTest(width,height){
   };
   return test;
 }
-  _map(){
+  _map(width,height){
     var retAry = [];
     for (var i = 0; i < this._height; i++) {
       for (var j = 0; j < this._width; j++) {
@@ -79,25 +79,16 @@ _passTest(width,height){
       if (mapArray[i].obj.x == newheight && mapArray[i].obj.y == newwidth) {
         mapArray[i].obj.name = snek.head;
         mapArray[i].type = "snek head";
+        snek.pos.x = mapArray[i].obj.x;
+        snek.pos.y = mapArray[i].obj.y;
+        
       }
       if (mapArray[i].obj.x == newheight && mapArray[i].obj.y == newwidth+1) {
         mapArray[i].obj.name = snek.body;
         mapArray[i].type = "snek body";
       }
     }
-    console.log(mapArray);
     return mapArray.join("");
-  }
-
-  _snekLoc(width,height){
-    var mapArray = this._mapAppear(width, height);
-    console.log(mapArray);
-    var whole = this._width*this._height;
-    for (var i = 0; i < whole; i++) {
-      if (mapArray[i].type == "snek head") {
-        return true;
-      }else {return false;}
-    }
   }
 
 }
