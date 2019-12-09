@@ -1,6 +1,7 @@
 //checks for wasd to push
 class Snek extends Map {
   constructor(){
+    super()
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length
     this._direction = this._direction;//way the snek is moving which is either North, South, East, West
@@ -38,22 +39,22 @@ class Snek extends Map {
   }
 
 
-  _constentsMove(directional){
-      if(directional == "North" && this._posY < map._height){
-        this._pos.y += 1;
-      }
-      if(directional == "South" && this._pos.y){
-        this._pos.y -=1;
-      }
-      if(directional == "East" && this._pos.x){
-        this._pos.x +=1;
-      }
-      if(directional == "West" && this._pos.x){
-        this._pos.x -=1;
-      }
-      console.log(this._pos.x);
-      console.log(this._pos.y);
-      }, 1000);
+  // _constentsMove(directional){
+  //     if(directional == "North" && this._posY < map._height){
+  //       this._pos.y += 1;
+  //     }
+  //     if(directional == "South" && this._pos.y){
+  //       this._pos.y -=1;
+  //     }
+  //     if(directional == "East" && this._pos.x){
+  //       this._pos.x +=1;
+  //     }
+  //     if(directional == "West" && this._pos.x){
+  //       this._pos.x -=1;
+  //     }
+  //     console.log(this._pos.x);
+  //     console.log(this._pos.y);
+  //     }, 1000);
 
     _overlap(){
       var direction = this.direction;
@@ -92,11 +93,6 @@ class Snek extends Map {
         this._head = " ";
         this._body = " ";
       }
-      if(nextMove == { Map.width,Map.length}){
-        this._head = " ";
-        this._body = " ";
-      }
-
     }
   }
 
