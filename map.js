@@ -5,7 +5,7 @@ class Map {
    this._maps = this._map(width,height);
   }
 
-
+//jake add some coments or kade is going to mouth kiss you 
   _map(width,height){
     var retAry = [];
     for (var i = 0; i < this._height; i++) {

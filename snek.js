@@ -38,6 +38,27 @@ class Snek extends Map{
       this._head = " ";
       this._body = " ";
     }
+    if(nextMove.x == 0){
+      this._head = " ";
+      this._body = " ";
+    }
+    if(nextMove.y == 0){
+      this._head = " ";
+      this._body = " ";
+    }
+    if(nextMove.x == Map.width){
+      this._head = " ";
+      this._body = " ";
+    }
+    if(nextMove.y == Map.length){
+      this._head = " ";
+      this._body = " ";
+    }
+    if(nextMove == { Map.width,Map.length}){
+      this._head = " ";
+      this._body = " ";
+    }
+
   }
 }
 
