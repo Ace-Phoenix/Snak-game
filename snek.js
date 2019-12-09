@@ -37,14 +37,9 @@ class Snek extends Map {
     }
   }
 
-<<<<<<< HEAD
+
   _constentsMove(directional){
       if(directional == "North" && this._posY < map._height){
-=======
-  constentsMove(directional){
-    setInterval(function(){
-      if(directional == "North" && this._pos.y){
->>>>>>> master
         this._pos.y += 1;
       }
       if(directional == "South" && this._pos.y){
@@ -59,12 +54,54 @@ class Snek extends Map {
       console.log(this._pos.x);
       console.log(this._pos.y);
       }, 1000);
-  }
-  _overlap(){
 
+    _overlap(){
+      var direction = this.direction;
+      var nextMove = this.pos;
+      if (direction == "North"){
+        nextMove.y ++;
+      }
+      else if(direction == "South"){
+        nextMove.y --;
+      }
+      else if(direction == "East"){
+        nextMove.x ++;
+      }
+      else if(direction == "West"){
+        nextMove.x --;
+      }
+      var bodyLoc = Map._snekLoc();
+      if (nextMove == bodyLoc){
+        //end game....... Kinda really just makes snek invisible
+        this._head = " ";
+        this._body = " ";
+      }
+      if(nextMove.x == 0){
+        this._head = " ";
+        this._body = " ";
+      }
+      if(nextMove.y == 0){
+        this._head = " ";
+        this._body = " ";
+      }
+      if(nextMove.x == Map.width){
+        this._head = " ";
+        this._body = " ";
+      }
+      if(nextMove.y == Map.length){
+        this._head = " ";
+        this._body = " ";
+      }
+      if(nextMove == { Map.width,Map.length}){
+        this._head = " ";
+        this._body = " ";
+      }
+
+    }
   }
-}
-//what is jakes gitname
+
+
+
 //checks for wasd to pushed
 //
 var sneekysneekysnek = this.pos;
@@ -83,7 +120,7 @@ function work(event) {
   if (event.key == "d" || event.key == "D") {
     push = "d";
   }
-  //in the five fucking minets he had my computer
+
   var sneks = new Snek();
   return sneks.directionChange(push);
 });
