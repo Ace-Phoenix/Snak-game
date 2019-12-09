@@ -114,12 +114,12 @@ class Map {
     }
     return snkFood;
   }
+  _updateMap(width,height){
+    var snkeLoc = this._snkeLoc(width,height);
+    var foodLoc = this._foodLoc(width,height);
+  }
 }
 
- _updateMap(width,height){
-   var snkeLoc = this._snkeLoc(width,height);
-   var foodLoc = this._foodLoc(width,height);
- }
 
 var widthChanger = 75;
 var heightChanger = 35;
