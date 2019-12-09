@@ -5,7 +5,7 @@ class Map {
    this._maps = this._map(width,height);
   }
 
-//jake add some coments or kade is going to mouth kiss you 
+
   _map(width,height){
     var retAry = [];
     for (var i = 0; i < this._height; i++) {
@@ -104,8 +104,22 @@ class Map {
     }
     return retAry;
   }
+
+  _foodLoc(width,heigth){
+    var whole = this._width*this._height;
+    for (var i = 0; i < whole; i++) {
+      if (nMap._maps[i].type == "food") {
+        var snkFood = nMap._maps[i].obj;
+      }
+    }
+    return snkFood;
+  }
 }
 
+ _updateMap(width,height){
+   var snkeLoc = this._snkeLoc(width,height);
+   var foodLoc = this._foodLoc(width,height);
+ }
 
 var widthChanger = 75;
 var heightChanger = 35;
