@@ -3,7 +3,7 @@ class Snek extends Map {
   constructor(){
     super()
     this._head = "O";//will have its own grapic mabey a "D"
-    this._body = "o";//length
+    this._body = "o";//length (array of coordinates)
     this._direction = this._direction;//way the snek is moving which is either North, South, East, West
     this._pos = {x:undefined,y:undefined};//will be wherer the snek is on the map
   }
@@ -92,6 +92,15 @@ class Snek extends Map {
       if(nextMove.y == Map.length){
         this._head = " ";
         this._body = " ";
+      }
+    }
+    _eatDaFood(){
+      var direction = this.direction;
+      var nextMove = this.pos;
+      var yums = Food.loc;
+      if(nextMove == yums){
+        this._body += this._body.slice;
+        Food._makeFood;
       }
     }
   }
