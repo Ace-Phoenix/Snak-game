@@ -115,8 +115,21 @@ class Map {
     return snkFood;
   }
   _updateMap(width,height){
-    var snkeLoc = this._snkeLoc(width,height);
+    var snekLoc = this._snekLoc(width,height);
     var foodLoc = this._foodLoc(width,height);
+    var whole = this._width*this._height;
+    for (var i = 0; i < whole; i++) {
+      if (nMap._maps[i].type == "food") {
+        nMap._maps[i] == foodLoc;
+      }
+      if (nMap._maps[i].type == "snek head") {
+        nMap._maps[i] == snekLoc[0];
+      }
+      if (nMap._maps[i].type == "snek body") {
+        nMap._maps[i] == snekLoc[1];
+      }
+    }
+    return nMap._maps;
   }
 }
 
