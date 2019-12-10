@@ -120,13 +120,13 @@ class Map {
     var whole = this._width*this._height;
     for (var i = 0; i < whole; i++) {
       if (nMap._maps[i].type == "food") {
-        nMap._maps[i] == foodLoc;
+      var food = nMap._maps[i];
       }
       if (nMap._maps[i].type == "snek head") {
-        nMap._maps[i] == snekLoc[0];
+        var snekHead = nMap._maps[i];
       }
       if (nMap._maps[i].type == "snek body") {
-        nMap._maps[i] == snekLoc[1];
+        var snekBody = nMap._maps[i];
       }
     }
     return nMap._maps;
