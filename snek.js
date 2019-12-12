@@ -43,7 +43,6 @@ class Snek extends Map {
       if(this._direction == "North"){
         this._pos.y = this._pos.y + 1;
         console.log(this._pos);
-        ;
       }
       if(this._direction == "South"){
         this._pos.y = this._pos.y + 1;
@@ -54,7 +53,9 @@ class Snek extends Map {
       if(this._direction == "West"){
         this._pos.x = this._pos.x + 1;
       }
-      };
+      console.log(this._pos.x);
+      console.log(this._pos.y);
+      }
 
     _overlap(){
       var direction = this.direction;
@@ -109,7 +110,6 @@ class Snek extends Map {
 
 //checks for wasd to pushed
 //
-var sneekysneekysnek = this.pos;
 document.addEventListener("keyup",
 function work(event) {
   var push = undefined;
