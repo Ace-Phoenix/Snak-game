@@ -4,11 +4,11 @@ class Snek extends Map {
     super()
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length (array of coordinates)
-    this._direction = this._direction;//way the snek is moving which is either North, South, East, West
-    this._pos = {x:5,y:5};//will be wherer the snek is on the map
+    this._direction = "West";//way the snek is moving which is either North, South, East, West
+    this._pos = this._pos;//will be wherer the snek is on the map
   }
   //getters
-  get head(){return this._head;}
+  get head(){return this._head;}//nice
   get body(){return this._body;}
   get direction(){return this._direction;}
   get pos(){return this._pos;}
@@ -39,18 +39,19 @@ class Snek extends Map {
   }
 
 
-  constentsMove(directional){
-      if(directional == "North" && this._pos.y){
-        this._pos.y += 1;
+  _constentsMove(directional){
+      if(this._direction == "North"){
+        this._pos.y = this._pos.y + 1;
+        console.log(this._pos);
       }
-      if(directional == "South" && this._pos.y){
-        this._pos.y -=1;
+      if(this._direction == "South"){
+        this._pos.y = this._pos.y + 1;
       }
-      if(directional == "East" && this._pos.x){
-        this._pos.x +=1;
+      if(this._direction == "East"){
+        this._pos.x = this._pos.x + 1;
       }
-      if(directional == "West" && this._pos.x){
-        this._pos.x -=1;
+      if(this._direction == "West"){
+        this._pos.x = this._pos.x + 1;
       }
       console.log(this._pos.x);
       console.log(this._pos.y);
