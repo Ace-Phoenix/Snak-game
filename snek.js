@@ -40,20 +40,20 @@ class Snek extends Map {
 
 
   _constentsMove(directional){
-      if(directional == "North" && this._posY < map._height){
-        this._pos.y += 1;
+      if(this._direction == "North"){
+        this._pos.y = this._pos.y + 1;
+        console.log(this._pos);
+        ;
       }
-      if(directional == "South" && this._pos.y){
-        this._pos.y -=1;
+      if(this._direction == "South"){
+        this._pos.y = this._pos.y + 1;
       }
-      if(directional == "East" && this._pos.x){
-        this._pos.x +=1;
+      if(this._direction == "East"){
+        this._pos.x = this._pos.x + 1;
       }
-      if(directional == "West" && this._pos.x){
-        this._pos.x -=1;
+      if(this._direction == "West"){
+        this._pos.x = this._pos.x + 1;
       }
-      console.log(this._pos.x);
-      console.log(this._pos.y);
       };
 
     _overlap(){
