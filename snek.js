@@ -100,7 +100,7 @@ class Snek extends Map {
       var yums = Food.loc;
       if(nextMove == yums){
         this._body += this._body.slice;
-        Food._makeFood;
+        map._Food;
       }
     }
   }
