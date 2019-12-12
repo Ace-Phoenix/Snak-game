@@ -54,7 +54,7 @@ class Snek extends Map {
       }
       console.log(this._pos.x);
       console.log(this._pos.y);
-      }, 1000);
+      };
 
     _overlap(){
       var direction = this.direction;
