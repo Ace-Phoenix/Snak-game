@@ -5,7 +5,7 @@ class Snek extends Map {
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length (array of coordinates)
     this._direction = this._direction;//way the snek is moving which is either North, South, East, West
-    this._pos = {x:undefined,y:undefined};//will be wherer the snek is on the map
+    this._pos = {x:5,y:5};//will be wherer the snek is on the map
   }
   //getters
   get head(){return this._head;}
@@ -39,8 +39,8 @@ class Snek extends Map {
   }
 
 
-  _constentsMove(directional){
-      if(directional == "North" && this._posY < map._height){
+  constentsMove(directional){
+      if(directional == "North" && this._pos.y){
         this._pos.y += 1;
       }
       if(directional == "South" && this._pos.y){
@@ -54,7 +54,7 @@ class Snek extends Map {
       }
       console.log(this._pos.x);
       console.log(this._pos.y);
-      };
+      }
 
     _overlap(){
       var direction = this.direction;
@@ -109,7 +109,6 @@ class Snek extends Map {
 
 //checks for wasd to pushed
 //
-var sneekysneekysnek = this.pos;
 document.addEventListener("keyup",
 function work(event) {
   var push = undefined;
