@@ -1,4 +1,6 @@
-var bool = false;
+var head = false;
+var body = false;
+var foo = false;
 class Map {
   constructor(width, height) {
    this._width = width;//actually height
@@ -27,9 +29,11 @@ class Map {
 
   _mapAppear(width, height){
     var food = this._food();
+    var newwidth = Math.floor(this._width/2);
+    var newheight = Math.floor(this._height/2);
+    var snek = new Snek();
     var whole = this._width*this._height;
     for (var i = 0; i < whole; i++) {
-      bool = true;
       if (this._maps[i].obj.y <= 0 ) {
         this._maps[i].obj.name = "|";
         this._maps[i].type = "border";
@@ -54,6 +58,7 @@ class Map {
         if (this._maps[i].obj.x == food.x && this._maps[i].obj.y == food.y) {
           this._maps[i].obj.name = "*";
           this._maps[i].type = "food";
+          foo = true;
         }
         if (food.x == 0) {
           food.x ++;
@@ -68,16 +73,15 @@ class Map {
           food.y --;
         }
       }
-    var newwidth = Math.floor(this._width/2);
-    var newheight = Math.floor(this._height/2);
-    var snek = new Snek();
       if (this._maps[i].obj.x == newheight && this._maps[i].obj.y == newwidth) {
+        head = true;
         this._maps[i].obj.name = snek.head;
         this._maps[i].type = "snek head";
       }
       if (this._maps[i].obj.x == newheight && this._maps[i].obj.y == newwidth+1) {
         this._maps[i].obj.name = snek.body;
         this._maps[i].type = "snek body";
+        body = true;
       }
     }
     return this._maps.join("");
@@ -111,33 +115,36 @@ class Map {
     for (var i = 0; i < whole; i++) {
       if (nMap._maps[i].type == "food") {
         var snkFood = nMap._maps[i].obj;
-        console.log(i);
       }
     }
     return snkFood;
   }
 
-  _updateMap(width,height,snakeHead,snakeBody,food){
-    var snekLoc = this._snekLoc(width,height);
-    var foodLoc = this._foodLoc(width,height);
+  _update(width,height){
+    var mAp = this._mapAppear(width, height);
     var whole = this._width*this._height;
+    var snakes = this._snekLoc(width,height);
+    var food = this._foodLoc(width,height);
     for (var i = 0; i < whole; i++) {
-      if (nMap._maps[i].type == "food") {
-        var food = nMap._maps[i];
-      }
-      if (nMap._maps[i].type == "snek head") {
-        var snekHead = nMap._maps[i];
-      }
-      if (nMap._maps[i].type == "snek body") {
-        var snekBody = nMap._maps[i];
-      }
+      if (head == true) {
+      if (mAp[i].x == snakes[0].x && mAp[i].y == snakes[1].y) {
 
+      }
     }
+      if (body == true) {
+        if (mAp[i].x == snakes[1].x && mAp[i].y == snakes[1].y){
 
+        }
+      }
+      if (foo == true) {
+        if (nMap._maps[i].x == food.x && nMap._maps[i].y == food.y)
+        food.x == nMap._maps[i].x;
+        food.y == nMap._maps[i].y;
+      }
+    }
+    return mAp;
   }
-
 }
-
 
 var widthChanger = 75;
 var heightChanger = 35;
@@ -169,6 +176,6 @@ function sizeDownregH(){
 }
 function sizeUp(widthChanger,heightChanger){
   var nMap = new Map(widthChanger,heightChanger);
-document.getElementById("map").innerHTML = nMap._mapAppear();
+document.getElementById("map").innerHTML = nMap._update();
 }
-document.getElementById("map").innerHTML = nMap._mapAppear();
+document.getElementById("map").innerHTML = nMap._update();
