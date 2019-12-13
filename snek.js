@@ -16,8 +16,6 @@ class Snek extends Map {
   //setters
   set body(length){this._body = length;}
   set direction(direction){this.direction = direction;}
-  set posX(posX){this._posX = posX;}
-  set posY(posY){this._posY = posY;}
 
   directionChange(keyPressed){
     //North
