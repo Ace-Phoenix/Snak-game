@@ -40,7 +40,6 @@ class Snek extends Map {
   _constentsMove(directional){
       if(this._direction == "North"){
         this._pos.y = this._pos.y + 1;
-        console.log(this._pos);
       }
       if(this._direction == "South"){
         this._pos.y = this._pos.y + 1;
@@ -93,6 +92,7 @@ class Snek extends Map {
         this._body = " ";
       }
     }
+    
     _eatDaFood(){
       var direction = this.direction;
       var nextMove = this.pos;

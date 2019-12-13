@@ -91,7 +91,7 @@ class Map {
     var whole = this._width*this._height;
     var snek = new Snek();
     var retAry = [{x:undefined,y:undefined,type:undefined},{x:undefined,y:undefined,type:undefined}];
-    for (var i = 0; i < 2625; i++) {
+    for (var i = 0; i < whole; i++) {
       if (nMap._maps[i].type == "snek head") {
         snek.pos.x = this._maps[i].obj.x;
         snek.pos.y = this._maps[i].obj.y;
@@ -127,19 +127,22 @@ class Map {
     var food = this._foodLoc(width,height);
     for (var i = 0; i < whole; i++) {
       if (head == true) {
-      if (mAp[i].x == snakes[0].x && mAp[i].y == snakes[1].y) {
-
+        if (mAp[i].x == snakes[0].x && mAp[i].y == snakes[0].y) {
+          snakes[0].x == nMap._maps[i].x
+          snakes[0].y == nMap._maps[i].y
+        }
       }
-    }
       if (body == true) {
         if (mAp[i].x == snakes[1].x && mAp[i].y == snakes[1].y){
-
+          snakes[1].x == nMap._maps[i].x
+          snakes[1].y == nMap._maps[i].y
         }
       }
       if (foo == true) {
-        if (nMap._maps[i].x == food.x && nMap._maps[i].y == food.y)
-        food.x == nMap._maps[i].x;
-        food.y == nMap._maps[i].y;
+        if (nMap._maps[i].x == food.x && nMap._maps[i].y == food.y) {
+          food.x == nMap._maps[i].x;
+          food.y == nMap._maps[i].y;
+        }
       }
     }
     return mAp;
