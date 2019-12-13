@@ -56,10 +56,12 @@ class Map {
       }
       if ((this._maps[i].type !== "border") || (this._maps[i].type !== "corner")) {
         if (this._maps[i].obj.x == food.x && this._maps[i].obj.y == food.y) {
+          if (foo == false) {
           this._maps[i].obj.name = "*";
           this._maps[i].type = "food";
           foo = true;
         }
+      }
         if (food.x == 0) {
           food.x ++;
         }
@@ -136,13 +138,18 @@ class Map {
 
         }
       }
-      if (foo == true) {
-        if (nMap._maps[i].x == food.x && nMap._maps[i].y == food.y)
+    if (foo == true) {
+        if (nMap._maps[i].x == food.x && nMap._maps[i].y == food.y){
         food.x == nMap._maps[i].x;
         food.y == nMap._maps[i].y;
+        console.log("hi");
+          }
+          if (snakes[0].x == food.x && snakes[0].x == food.x) {
+            foo == false;
+        }
       }
     }
-    return mAp;
+  return mAp;
   }
 }
 
