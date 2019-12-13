@@ -1,10 +1,10 @@
+var bool = false;
 class Map {
   constructor(width, height) {
    this._width = width;//actually height
    this._height = height;//actually width
    this._maps = this._map(width,height);
   }
-
 
   _map(width,height){
     var retAry = [];
@@ -29,6 +29,7 @@ class Map {
     var food = this._food();
     var whole = this._width*this._height;
     for (var i = 0; i < whole; i++) {
+      bool = true;
       if (this._maps[i].obj.y <= 0 ) {
         this._maps[i].obj.name = "|";
         this._maps[i].type = "border";
@@ -82,50 +83,47 @@ class Map {
     return this._maps.join("");
   }
 
-  _snekLoc(){
+  _snekLoc(width,height){
     var whole = this._width*this._height;
     var snek = new Snek();
-    var snek_boy = {x:undefined,y:undefined,type:undefined};
-    var retAry = [];//var retAry = [{x:undefined,y:undefined,type:undefined},{x:undefined,y:undefined,type:undefined}];//this could be the reason why it doesnt work
-    var map = this._map(this._width, this._height);
-    for (var i = 0; i < whole; i++) {
-      if (map[i].type === "snek head") {
-        snek.pos.x = this._map[i].obj.x;
-        snek.pos.y = this._map[i].obj.y;
-        snek_boy.x = snek._pos.x;
-        snek_boy.y = snek._pos.y;
-        snek_boy.type = "snek head";
-        retAry[i].push(snek_boy);
-      }
-      if (this._maps[i].type === "snek body") {
+    var retAry = [{x:undefined,y:undefined,type:undefined},{x:undefined,y:undefined,type:undefined}];
+    for (var i = 0; i < 2625; i++) {
+      if (nMap._maps[i].type == "snek head") {
         snek.pos.x = this._maps[i].obj.x;
         snek.pos.y = this._maps[i].obj.y;
-        snek_boy.x = snek.pos.x;
-        snek_boy.y = snek.pos.y;
-        snek_boy.type = "snek body";
-        retAry[i].push(snek_boy);
+        retAry[0].x = snek.pos.x;
+        retAry[0].y = snek.pos.y;
+        retAry[0].type = "snek head";
       }
-      console.log(map[i])
+      if (nMap._maps[i].type == "snek body") {
+        snek.pos.x = this._maps[i].obj.x;
+        snek.pos.y = this._maps[i].obj.y;
+        retAry[1].x = snek.pos.x;
+        retAry[1].y = snek.pos.y;
+        retAry[1].type = "snek body";
+      }
     }
     return retAry;
   }
 
-  _foodLoc(width,heigth){
+  _foodLoc(width,height){
     var whole = this._width*this._height;
     for (var i = 0; i < whole; i++) {
       if (nMap._maps[i].type == "food") {
         var snkFood = nMap._maps[i].obj;
+        console.log(i);
       }
     }
     return snkFood;
   }
-  _updateMap(width,height){
+
+  _updateMap(width,height,snakeHead,snakeBody,food){
     var snekLoc = this._snekLoc(width,height);
     var foodLoc = this._foodLoc(width,height);
     var whole = this._width*this._height;
     for (var i = 0; i < whole; i++) {
       if (nMap._maps[i].type == "food") {
-      var food = nMap._maps[i];
+        var food = nMap._maps[i];
       }
       if (nMap._maps[i].type == "snek head") {
         var snekHead = nMap._maps[i];
@@ -133,9 +131,11 @@ class Map {
       if (nMap._maps[i].type == "snek body") {
         var snekBody = nMap._maps[i];
       }
+
     }
-    return nMap._maps;
+
   }
+
 }
 
 
