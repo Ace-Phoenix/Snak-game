@@ -5,7 +5,7 @@ class Snek extends Map {
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length (array of coordinates)
     this._direction = this._direction;//way the snek is moving which is either North, South, East, West
-    this._pos = this._pos;//will be wherer the snek is on the map
+    this._pos = {x:undefined,y:undefined};//will be wherer the snek is on the map
   }
   //getters
   get head(){return this._head;}//nice
