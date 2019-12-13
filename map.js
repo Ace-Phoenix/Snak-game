@@ -79,9 +79,6 @@ class Map {
         this._maps[i].obj.name = snek.body;
         this._maps[i].type = "snek body";
       }
-      if (bool == true) {
-        console.log(this._snekLoc(width,height));
-      }
     }
     return this._maps.join("");
   }
@@ -114,6 +111,7 @@ class Map {
     for (var i = 0; i < whole; i++) {
       if (nMap._maps[i].type == "food") {
         var snkFood = nMap._maps[i].obj;
+        console.log(i);
       }
     }
     return snkFood;
