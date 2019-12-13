@@ -178,4 +178,6 @@ function sizeUp(widthChanger,heightChanger){
   var nMap = new Map(widthChanger,heightChanger);
 document.getElementById("map").innerHTML = nMap._update();
 }
-document.getElementById("map").innerHTML = nMap._update();
+setInterval(function(){
+document.getElementById("map").innerHTML = nMap._update();}
+,1000)
