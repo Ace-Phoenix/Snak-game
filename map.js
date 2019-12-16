@@ -1,6 +1,7 @@
 var head = false;
 var body = false;
 var foo = false;
+var snek = new Snek();
 class Map {
   constructor(width, height) {
    this._width = width;//actually height
@@ -31,7 +32,6 @@ class Map {
     var food = this._food();
     var newwidth = Math.floor(this._width/2);
     var newheight = Math.floor(this._height/2);
-    var snek = new Snek();
     var whole = this._width*this._height;
     for (var i = 0; i < whole; i++) {
       if (this._maps[i].obj.y <= 0 ) {
@@ -79,6 +79,8 @@ class Map {
         head = true;
         this._maps[i].obj.name = snek.head;
         this._maps[i].type = "snek head";
+        snek._pos.x = this._maps[i].obj.x;
+        snek._pos.y = this._maps[i].obj.y;
       }
       if (this._maps[i].obj.x == newheight && this._maps[i].obj.y == newwidth+1) {
         this._maps[i].obj.name = snek.body;
@@ -93,7 +95,7 @@ class Map {
     var whole = this._width*this._height;
     var snek = new Snek();
     var retAry = [{x:undefined,y:undefined,type:undefined},{x:undefined,y:undefined,type:undefined}];
-    for (var i = 0; i < 2625; i++) {
+    for (var i = 0; i < whole; i++) {
       if (nMap._maps[i].type == "snek head") {
         snek.pos.x = this._maps[i].obj.x;
         snek.pos.y = this._maps[i].obj.y;
@@ -122,27 +124,27 @@ class Map {
     return snkFood;
   }
 
-  _update(width,height){
+  _update(width,height,directional){
     var mAp = this._mapAppear(width, height);
     var whole = this._width*this._height;
     var snakes = this._snekLoc(width,height);
     var food = this._foodLoc(width,height);
     for (var i = 0; i < whole; i++) {
       if (head == true) {
-      if (mAp[i].x == snakes[0].x && mAp[i].y == snakes[1].y) {
-
+        if (nMap._maps[i].obj.x == snakes[0].x && nMap._maps[i].obj.y == snakes[0].y) {
+          snek._constentsMove("West");
+        }
       }
-    }
       if (body == true) {
         if (mAp[i].x == snakes[1].x && mAp[i].y == snakes[1].y){
-
+          snakes[1].x == nMap._maps[i].x;
+          snakes[1].y == nMap._maps[i].y;
         }
       }
     if (foo == true) {
-        if (nMap._maps[i].x == food.x && nMap._maps[i].y == food.y){
+        if (nMap._maps[i].obj.x == food.x && nMap._maps[i].obj.y == food.y){
         food.x == nMap._maps[i].x;
         food.y == nMap._maps[i].y;
-        console.log("hi");
           }
           if (snakes[0].x == food.x && snakes[0].x == food.x) {
             foo == false;

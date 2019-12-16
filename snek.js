@@ -20,36 +20,35 @@ class Snek extends Map {
   directionChange(keyPressed){
     //North
     if(keyPressed == "w"){
-      return this.constentsMove("North");
+      this._direction = "North";
     }
     //South
     if(keyPressed == "s"){
-      return this.constentsMove("South");
+      this._direction = "South";
     }
     //East
     if(keyPressed == "d"){
-      return this.constentsMove("East");
+      this._direction = "East";
     }
     //West
     if(keyPressed == "a"){
-      return this.constentsMove("West");
+      this._direction = "West";
     }
   }
 
 
   _constentsMove(directional){
-      if(this._direction == "North"){
-        this._pos.y = this._pos.y + 1;
-        console.log(this._pos);
-      }
-      if(this._direction == "South"){
+      if(directional == "North"){
         this._pos.y = this._pos.y + 1;
       }
-      if(this._direction == "East"){
+      if(directional == "South"){
+        this._pos.y = this._pos.y + 1;
+      }
+      if(directional == "East"){
         this._pos.x = this._pos.x + 1;
       }
-      if(this._direction == "West"){
-        this._pos.x = this._pos.x + 1;
+      if(directional == "West"){
+        this._pos.x == this._pos.x + 1;
       }
       console.log(this._pos.x);
       console.log(this._pos.y);
@@ -93,6 +92,7 @@ class Snek extends Map {
         this._body = " ";
       }
     }
+
     _eatDaFood(){
       var direction = this.direction;
       var nextMove = this.pos;
