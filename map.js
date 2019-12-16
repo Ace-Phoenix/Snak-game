@@ -82,10 +82,33 @@ class Map {
         snek._pos.y = this._maps[i].obj.y;
         head = true;
       }
-      if (this._maps[i].obj.x == snek.pos.x && this._maps[i].obj.y == snek.pos.y+1) {
-        this._maps[i].obj.name = snek.body;
-        this._maps[i].type = "snek body";
-        body = true;
+      if (snek.direction == "West") {
+        if (this._maps[i].obj.x == snek.pos.x && this._maps[i].obj.y == snek.pos.y+1) {
+          this._maps[i].obj.name = snek.body;
+          this._maps[i].type = "snek body";
+          body = true;
+        }
+      }
+      if (snek.direction == "North") {
+        if (this._maps[i].obj.y == snek.pos.y && this._maps[i].obj.x == snek.pos.x+1) {
+          this._maps[i].obj.name = snek.body;
+          this._maps[i].type = "snek body";
+          body = true;
+        }
+      }
+      if (snek.direction == "South") {
+        if (this._maps[i].obj.y == snek.pos.y && this._maps[i].obj.x == snek.pos.x-1) {
+          this._maps[i].obj.name = snek.body;
+          this._maps[i].type = "snek body";
+          body = true;
+        }
+      }
+      if (snek.direction == "East") {
+        if (this._maps[i].obj.x == snek.pos.x && this._maps[i].obj.y == snek.pos.y-1) {
+          this._maps[i].obj.name = snek.body;
+          this._maps[i].type = "snek body";
+          body = true;
+        }
       }
     }
     return this._maps.join("");
@@ -123,21 +146,24 @@ class Map {
     return snkFood;
   }
 
-  _update(width,height,directional,keyPressed){
+  _update(width,height,directional="West",keyPressed){
     var mAp = this._mapAppear(width, height);
     var whole = this._width*this._height;
     var snakes = this._snekLoc(width,height);
     var food = this._foodLoc(width,height);
     for (var i = 0; i < whole; i++) {
+      if (nMap._maps[i].type == "snek head") {
+        var snekHead = nMap._maps[i].obj;
       if (head == true) {
-          snek._directionChange(keyPressed);
-          snek._constentsMove(directional);
+        var direct = snek._directionChange(snek.direction);
+          snek._constentsMove(direct);
       }
     if (foo == true) {
-          if (snakes[0].x == food.x && snakes[0].y == food.y){
+          if (snekHead.x == food.x && snekHead.y == food.y){
             foo == false;
         }
       }
+    }
     }
   return mAp;
   }
@@ -172,7 +198,6 @@ function sizeDownregH(){
 
 }
 function sizeUp(widthChanger,heightChanger){
-  var nMap = new Map(widthChanger,heightChanger);
 document.getElementById("map").innerHTML = nMap._update();
 }
 setInterval(function(){

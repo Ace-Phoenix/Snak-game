@@ -1,10 +1,11 @@
 //checks for wasd to push
+
 class Snek extends Map {
   constructor(){
     super()
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length (array of coordinates)
-    this._direction = this._direction;//way the snek is moving which is either North, South, East, West
+    this._direction = "East"//way the snek is moving which is either North, South, East, West
     this._pos = {x:10,y:20};//will be wherer the snek is on the map
   }
   //getters
@@ -124,5 +125,5 @@ function work(event) {
   }
 
   var sneks = new Snek();
-  return sneks.directionChange(push);
+  return sneks._directionChange(push);
 });
