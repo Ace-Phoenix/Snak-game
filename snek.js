@@ -5,7 +5,7 @@ class Snek extends Map {
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length (array of coordinates)
     this._direction = this._direction;//way the snek is moving which is either North, South, East, West
-    this._pos = {x:undefined,y:undefined};//will be wherer the snek is on the map
+    this._pos = {x:10,y:20};//will be wherer the snek is on the map
   }
   //getters
   get head(){return this._head;}//nice
@@ -17,7 +17,7 @@ class Snek extends Map {
   set body(length){this._body = length;}
   set direction(direction){this.direction = direction;}
 
-  directionChange(keyPressed){
+  _directionChange(keyPressed){
     //North
     if(keyPressed == "w"){
       this._direction = "North";
@@ -50,8 +50,7 @@ class Snek extends Map {
       if(directional == "West"){
         this._pos.x == this._pos.x + 1;
       }
-      console.log(this._pos.x);
-      console.log(this._pos.y);
+
       }
 
     _overlap(){
