@@ -43,7 +43,6 @@ class Snek extends Map {
 
 
   _constentsMove(){
-    console.log("ree")
   //  while(this._overlap() == true){
       if(this._direction == "North"){
         this._pos.x = this._pos.x - 1;
@@ -52,10 +51,10 @@ class Snek extends Map {
         this._pos.x = this._pos.x + 1;
       }
       if(this._direction == "East"){
-        this._pos.y == this._pos.y + 1;
+        this._pos.y = this._pos.y + 1;
       }
       if(this._direction == "West"){
-        this._pos.y == this._pos.y - 1;
+        this._pos.y = this._pos.y - 1;
         }
     //  }
 

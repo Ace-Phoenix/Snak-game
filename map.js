@@ -166,7 +166,6 @@ class Map {
     var mAp = this._mapAppear(width, height);
     var whole = this._width*this._height;
     var snakes = this._snekLoc(width,height);
-    console.log(snakes.length);
     var food = this._foodLoc(width,height);
     var direc = snek._directionChange(but);
     for (var i = 0; i < whole; i++) {
