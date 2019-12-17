@@ -84,7 +84,7 @@ class Map {
         this._maps[i].type = "snek head";
         snek._pos.x = this._maps[i].obj.x;
         snek._pos.y = this._maps[i].obj.y;
-        snek._direction = "South";
+        snek._direction = "East";
         head = true;
       }
       if (snek.direction == "West") {
@@ -175,7 +175,7 @@ class Map {
         snek._constentsMove(direc);
       }
       if (snakes.length <= desired) {
-        del = false
+        del = false;
       }else if(snakes.length >= desired) {
         del = true;
       }

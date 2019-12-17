@@ -19,36 +19,33 @@ class Snek extends Map {
 
   _directionChange(keyPressed){
     //North
-    if(keyPressed == "w" && this._direction != "South"){
+    if(keyPressed == "w" ){
       this._direction = "North";
-      console.log("w")
     }
     //South
-    if(keyPressed == "s" && this._direction != "North"){
+    if(keyPressed == "s" ){
       this._direction = "South";
-      console.log("s")
     }
     //East
-    if(keyPressed == "d" && this._direction != "West"){
+    if(keyPressed == "d" ){
       this._direction = "East";
-      console.log("d")
     }
     //West
-    if(keyPressed == "a" && this._direction != "East"){
+    if(keyPressed == "a" ){
       this._direction = "West";
-      console.log("a")
     }
     return this.direction;
   }
 
 
   _constentsMove(){
-  //  while(this._overlap() == true){
+
       if(this._direction == "North"){
         this._pos.x = this._pos.x - 1;
       }
       if(this._direction == "South"){
         this._pos.x = this._pos.x + 1;
+
       }
       if(this._direction == "East"){
         this._pos.y = this._pos.y + 1;
@@ -56,7 +53,6 @@ class Snek extends Map {
       if(this._direction == "West"){
         this._pos.y = this._pos.y - 1;
         }
-    //  }
 
     }
 
