@@ -21,37 +21,45 @@ class Snek extends Map {
     //North
     if(keyPressed == "w"){
       this._direction = "North";
+      console.log("w")
     }
     //South
     if(keyPressed == "s"){
       this._direction = "South";
+      console.log("s")
     }
     //East
     if(keyPressed == "d"){
       this._direction = "East";
+      console.log("d")
     }
     //West
     if(keyPressed == "a"){
       this._direction = "West";
+      console.log("a")
     }
     return this.direction;
   }
 
 
-  _constentsMove(directional){
-      if(directional == "North"){
+  _constentsMove(){
+    console.log("ree")
+  //  while(this._overlap() == true){
+      if(this._direction == "North"){
         this._pos.x = this._pos.x - 1;
       }
-      if(directional == "South"){
+      if(this._direction == "South"){
         this._pos.x = this._pos.x + 1;
       }
-      if(directional == "East"){
+      if(this._direction == "East"){
         this._pos.y == this._pos.y + 1;
       }
-      if(directional == "West"){
+      if(this._direction == "West"){
         this._pos.y == this._pos.y - 1;
         }
-      }
+    //  }
+
+    }
 
     _overlap(){
       var direction = this.direction;
@@ -68,28 +76,35 @@ class Snek extends Map {
       else if(direction == "West"){
         nextMove.x --;
       }
-      var bodyLoc = Map._snekLoc();
+      var bodyLoc = this._loc;
       if (nextMove == bodyLoc){
         //end game....... Kinda really just makes snek invisible
         this._head = " ";
         this._body = " ";
+        return false;
       }
-      if(nextMove.x == 0){
+      else if(nextMove.x == 0){
         this._head = " ";
         this._body = " ";
+        return false
       }
-      if(nextMove.y == 0){
+      else if(nextMove.y == 0){
         this._head = " ";
         this._body = " ";
+        return false;
       }
-      if(nextMove.x == Map.width){
+      else if(nextMove.x == Map.width){
         this._head = " ";
         this._body = " ";
+        return false;
       }
-      if(nextMove.y == Map.length){
+      else if(nextMove.y == Map.length){
         this._head = " ";
         this._body = " ";
-      }
+        return false;
+      }else{
+        console.log("MOVE")
+        return true}
     }
 
     _eatDaFood(){
