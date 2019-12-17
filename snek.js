@@ -19,22 +19,22 @@ class Snek extends Map {
 
   _directionChange(keyPressed){
     //North
-    if(keyPressed == "w" && this._direction != "South"){
+    if(keyPressed == "w"){
       this._direction = "North";
       console.log("w")
     }
     //South
-    if(keyPressed == "s" && this._direction != "North"){
+    if(keyPressed == "s"){
       this._direction = "South";
       console.log("s")
     }
     //East
-    if(keyPressed == "d" && this._direction != "West"){
+    if(keyPressed == "d"){
       this._direction = "East";
       console.log("d")
     }
     //West
-    if(keyPressed == "a" && this._direction != "East"){
+    if(keyPressed == "a"){
       this._direction = "West";
       console.log("a")
     }
