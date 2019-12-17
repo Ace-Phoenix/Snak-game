@@ -146,7 +146,7 @@ class Map {
     if (del == true) {
       var back = retAry.pop();
       back.type = "map";
-      loc.name = " "
+      loc.name = " ";
       console.log(back);
     }
     return retAry;
@@ -162,7 +162,7 @@ class Map {
     return snkFood;
   }
 
-  _update(width,height,directional="West"){
+  _update(width,height,directional="West",desired=0){
     var mAp = this._mapAppear(width, height);
     var whole = this._width*this._height;
     var snakes = this._snekLoc(width,height);
@@ -175,9 +175,9 @@ class Map {
       if (head == true) {
         snek._constentsMove(direc);
       }
-      if (snakes.length <= 2) {
+      if (snakes.length <= desired) {
         del = false
-      }else if(snakes.length >= 2) {
+      }else if(snakes.length >= desired) {
         del = true;
       }
       if (foo == true) {
