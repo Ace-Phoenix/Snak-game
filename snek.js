@@ -1,11 +1,10 @@
 //checks for wasd to push
-
 class Snek extends Map {
   constructor(){
     super()
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length (array of coordinates)
-    this._direction = "East"//way the snek is moving which is either North, South, East, West
+    this._direction = undefined;//way the snek is moving which is either North, South, East, West
     this._pos = {x:10,y:20};//will be wherer the snek is on the map
   }
   //getters
@@ -16,7 +15,7 @@ class Snek extends Map {
 
   //setters
   set body(length){this._body = length;}
-  set direction(direction){this.direction = direction;}
+
 
   _directionChange(keyPressed){
     //North
@@ -35,23 +34,23 @@ class Snek extends Map {
     if(keyPressed == "a"){
       this._direction = "West";
     }
+    return this.direction;
   }
 
 
   _constentsMove(directional){
       if(directional == "North"){
-        this._pos.y = this._pos.y + 1;
+        this._pos.x = this._pos.x - 1;
       }
       if(directional == "South"){
-        this._pos.y = this._pos.y + 1;
-      }
-      if(directional == "East"){
         this._pos.x = this._pos.x + 1;
       }
-      if(directional == "West"){
-        this._pos.x == this._pos.x + 1;
+      if(directional == "East"){
+        this._pos.y == this._pos.y + 1;
       }
-
+      if(directional == "West"){
+        this._pos.y == this._pos.y - 1;
+        }
       }
 
     _overlap(){
@@ -103,27 +102,3 @@ class Snek extends Map {
       }
     }
   }
-
-
-
-//checks for wasd to pushed
-//
-document.addEventListener("keyup",
-function work(event) {
-  var push = undefined;
-  if (event.key == "w" || event.key == "W") {
-    push = "w";
-  }
-  if (event.key == "a" || event.key == "A") {
-    push = "a";
-  }
-  if (event.key == "s" || event.key =="S") {
-    push = "s";
-  }
-  if (event.key == "d" || event.key == "D") {
-    push = "d";
-  }
-
-  var sneks = new Snek();
-  return sneks._directionChange(push);
-});

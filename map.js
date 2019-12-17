@@ -1,13 +1,17 @@
 var head = false;
 var body = false;
 var foo = false;
+var oldLoc = {x:undefined,y:undefined};
 var snek = new Snek();
+var but = undefined;
+var del = false;
 class Map {
   constructor(width, height) {
    this._width = width;//actually height
    this._height = height;//actually width
    this._maps = this._map(width,height);
   }
+
 
   _map(width,height){
     var retAry = [];
@@ -80,6 +84,7 @@ class Map {
         this._maps[i].type = "snek head";
         snek._pos.x = this._maps[i].obj.x;
         snek._pos.y = this._maps[i].obj.y;
+        snek._direction = "South";
         head = true;
       }
       if (snek.direction == "West") {
@@ -104,6 +109,7 @@ class Map {
         }
       }
       if (snek.direction == "East") {
+        oldLoc.y = oldLoc.y-1;
         if (this._maps[i].obj.x == snek.pos.x && this._maps[i].obj.y == snek.pos.y-1) {
           this._maps[i].obj.name = snek.body;
           this._maps[i].type = "snek body";
@@ -116,22 +122,31 @@ class Map {
 
   _snekLoc(width,height){
     var whole = this._width*this._height;
-    var retAry = [{x:undefined,y:undefined,type:undefined},{x:undefined,y:undefined,type:undefined}];
+    var retAry = [];
+    var retObj = {x:undefined,y:undefined,type:undefined,name:undefined};
     for (var i = 0; i < whole; i++) {
       if (nMap._maps[i].type == "snek head") {
         snek.pos.x = this._maps[i].obj.x;
         snek.pos.y = this._maps[i].obj.y;
-        retAry[0].x = snek.pos.x;
-        retAry[0].y = snek.pos.y;
-        retAry[0].type = "snek head";
+        retObj.x = snek.pos.x;
+        retObj.y = snek.pos.y;
+        retObj.type = "snek head";
+        retAry.push(retObj);
       }
       if (nMap._maps[i].type == "snek body") {
-        snek.pos.x = this._maps[i].obj.x;
-        snek.pos.y = this._maps[i].obj.y;
-        retAry[1].x = snek.pos.x;
-        retAry[1].y = snek.pos.y;
-        retAry[1].type = "snek body";
+        snek.pos.x = oldLoc.x;
+        snek.pos.y = oldLoc.y;
+        retObj.x = oldLoc.x;
+        retObj.y = oldLoc.y;
+        var loc = this._maps[i].obj;
+        retObj.type = "snek body";
+        retAry.push(retObj);
       }
+    }
+    if (del == true) {
+      var back = retAry.pop();
+      back.type = "map";
+      console.log(back);
     }
     return retAry;
   }
@@ -146,29 +161,48 @@ class Map {
     return snkFood;
   }
 
-  _update(width,height,directional="West",keyPressed){
+  _update(width,height,directional="West"){
     var mAp = this._mapAppear(width, height);
     var whole = this._width*this._height;
     var snakes = this._snekLoc(width,height);
+    console.log(snakes.length);
     var food = this._foodLoc(width,height);
+    var direc = snek._directionChange(but);
     for (var i = 0; i < whole; i++) {
       if (nMap._maps[i].type == "snek head") {
         var snekHead = nMap._maps[i].obj;
       if (head == true) {
-        var direct = snek._directionChange(snek.direction);
-          snek._constentsMove(direct);
+        snek._constentsMove(direc);
       }
-    if (foo == true) {
+      if (snakes.length <= 2) {
+        del = false
+      }else if(snakes.length >= 2) {
+        del = true;
+      }
+      if (foo == true) {
           if (snekHead.x == food.x && snekHead.y == food.y){
             foo == false;
+          }
         }
       }
-    }
     }
   return mAp;
   }
 }
-
+document.addEventListener('keydown', function(e){
+   if(e.key === 'w'){
+     but = "w";
+   }
+   if (e.key === "a") {
+     but = "a";
+   }
+   if (e.key === "s") {
+     but = "s";
+   }
+   if (e.key === "d") {
+     but = "d";
+   }
+})
 var widthChanger = 75;
 var heightChanger = 35;
 var nMap = new Map(widthChanger,heightChanger);
