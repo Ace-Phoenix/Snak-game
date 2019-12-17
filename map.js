@@ -146,6 +146,7 @@ class Map {
     if (del == true) {
       var back = retAry.pop();
       back.type = "map";
+      loc.name = " "
       console.log(back);
     }
     return retAry;
