@@ -142,19 +142,15 @@ class Map {
     var whole = this._width*this._height;
     var retAry = [];
     var oldLoc = this._findBodyLoc();
-    var retObj = {x:undefined,y:undefined,type:undefined,name:undefined};
+    var retObj = {x:undefined,y:undefined,type:undefined};
     for (var i = 0; i < whole; i++) {
-      if (head == true) {
       if (nMap._maps[i].type == "snek head") {
         snek.pos.x = this._maps[i].obj.x;
         snek.pos.y = this._maps[i].obj.y;
         retObj.x = snek.pos.x;
         retObj.y = snek.pos.y;
         retObj.type = "snek head";
-        console.log(retObj+"head");
-        retAry.push(retObj)
-        head = false;
-        }
+        retAry.push(retObj);
       }
       if (nMap._maps[i].type == "snek body") {
         snek.pos.x = oldLoc.x;
@@ -163,7 +159,6 @@ class Map {
         retObj.y = oldLoc.y;
         var loc = this._maps[i].obj;
         retObj.type = "snek body";
-        console.log(retObj+"Body");
         retAry.push(retObj);
       }
     }
@@ -171,6 +166,7 @@ class Map {
       var rid = retAry.pop();
       rid;
       rid.type = "map";
+      loc.name =" ";
       return retAry;
     }
     console.log(retAry);
@@ -188,7 +184,7 @@ class Map {
   }
 
   _update(width,height){
-    var desired = 1;
+    var desired = 0;
     var mAp = this._mapAppear(width, height);
     var whole = this._width*this._height;
     var snakes = this._snekLoc(width,height);
