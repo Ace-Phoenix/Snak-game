@@ -6,6 +6,7 @@ class Snek extends Map {
     this._body = "o";//length (array of coordinates)
     this._direction = undefined;//way the snek is moving which is either North, South, East, West
     this._pos = {x:5,y:5};//will be wherer the snek is on the map
+    this._hasEaten = false;
   }
   //getters
   get head(){return this._head;}//nice
@@ -43,6 +44,7 @@ class Snek extends Map {
         if((nMap._foodLoc() !== undefined)&&((this._pos.x - 1) == nMap._foodLoc().x)&&(this._pos.y == nMap._foodLoc().y)){
           nMap._foodLoc().name = " ";
           nMap._food();
+          this._hasEaten = true;
           this._pos.x = this._pos.x - 1;
         foo = false;}
           else{this._pos.x = this._pos.x - 1;}
@@ -51,6 +53,7 @@ class Snek extends Map {
         if((nMap._foodLoc() !== undefined)&&((this._pos.x + 1) == nMap._foodLoc().x)&&((this._pos.y == nMap._foodLoc().y))){
           nMap._foodLoc().name = " ";
           nMap._food();
+          this._hasEaten = true;
           this._pos.x = this._pos.x + 1;
         foo = false;}
           else{this._pos.x = this._pos.x + 1;}
@@ -59,6 +62,7 @@ class Snek extends Map {
         if((nMap._foodLoc() !== undefined)&&((this._pos.x == nMap._foodLoc().x)&&((this._pos.y+1) == nMap._foodLoc().y))){
           nMap._foodLoc().name = " ";
           nMap._food();
+          this._hasEaten = true;
           this._pos.y = this._pos.y + 1;
         foo = false;}
           else{this._pos.y = this._pos.y + 1;}
@@ -67,6 +71,7 @@ class Snek extends Map {
         if((nMap._foodLoc() !== undefined)&&((this._pos.x == nMap._foodLoc().x)&&((this._pos.y-1) == nMap._foodLoc().y))){
           nMap._foodLoc().name = " ";
           nMap._food();
+          this._hasEaten = true;
           this._pos.y = this._pos.y - 1;
         foo = false;}
           else{this._pos.y = this._pos.y - 1;}
@@ -118,4 +123,5 @@ class Snek extends Map {
         console.log("MOVE")
         return true}
     }
+
   }
