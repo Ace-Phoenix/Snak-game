@@ -144,7 +144,9 @@ class Map {
       }
       if(snek._hasEaten == false){
           del = true;
+          
       }else if (snek._hasEaten == true) {
+        console.log(snek._hasEaten)
         del = false;
         snek._hasEaten = false;
         retAry.push(snek._loc)
