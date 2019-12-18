@@ -5,7 +5,7 @@ class Snek extends Map {
     this._head = "O";//will have its own grapic mabey a "D"
     this._body = "o";//length (array of coordinates)
     this._direction = undefined;//way the snek is moving which is either North, South, East, West
-    this._pos = {x:10,y:20};//will be wherer the snek is on the map
+    this._pos = {x:5,y:5};//will be wherer the snek is on the map
   }
   //getters
   get head(){return this._head;}//nice
@@ -39,21 +39,38 @@ class Snek extends Map {
 
 
   _constentsMove(){
-
       if(this._direction == "North"){
-        this._pos.x = this._pos.x - 1;
+        if((nMap._foodLoc() !== undefined)&&((this._pos.x - 1) == nMap._foodLoc().x)&&(this._pos.y == nMap._foodLoc().y)){
+          nMap._foodLoc().name = " ";
+          nMap._food();
+          this._pos.x = this._pos.x - 1;
+        foo = false;}
+          else{this._pos.x = this._pos.x - 1;}
       }
       if(this._direction == "South"){
-        this._pos.x = this._pos.x + 1;
-
+        if((nMap._foodLoc() !== undefined)&&((this._pos.x + 1) == nMap._foodLoc().x)&&((this._pos.y == nMap._foodLoc().y))){
+          nMap._foodLoc().name = " ";
+          nMap._food();
+          this._pos.x = this._pos.x + 1;
+        foo = false;}
+          else{this._pos.x = this._pos.x + 1;}
       }
       if(this._direction == "East"){
-        this._pos.y = this._pos.y + 1;
+        if((nMap._foodLoc() !== undefined)&&((this._pos.x == nMap._foodLoc().x)&&((this._pos.y+1) == nMap._foodLoc().y))){
+          nMap._foodLoc().name = " ";
+          nMap._food();
+          this._pos.y = this._pos.y + 1;
+        foo = false;}
+          else{this._pos.y = this._pos.y + 1;}
       }
       if(this._direction == "West"){
-        this._pos.y = this._pos.y - 1;
+        if((nMap._foodLoc() !== undefined)&&((this._pos.x == nMap._foodLoc().x)&&((this._pos.y-1) == nMap._foodLoc().y))){
+          nMap._foodLoc().name = " ";
+          nMap._food();
+          this._pos.y = this._pos.y - 1;
+        foo = false;}
+          else{this._pos.y = this._pos.y - 1;}
         }
-
     }
 
     _overlap(){
@@ -100,15 +117,5 @@ class Snek extends Map {
       }else{
         console.log("MOVE")
         return true}
-    }
-
-    _eatDaFood(){
-      var direction = this.direction;
-      var nextMove = this.pos;
-      var yums = Food.loc;
-      if(nextMove == yums){
-        this._body += this._body.slice;
-        map._Food;
-      }
     }
   }

@@ -11,7 +11,7 @@ class Food extends Map{
   set loc(loc){this.loc = loc;}
 
   _makeFood(maxX,maxY){//returns should be a key of {x,y}
-    var foLoc = {x:Math.floor(Math.random() * Math.floor(maxX)),y:Math.floor(Math.random() * Math.floor(maxY))}
-    return foLoc;
+    this._loc = {x:Math.floor(Math.random() * Math.floor(maxX)),y:Math.floor(Math.random() * Math.floor(maxY))}
+    return this._loc;
   }
   }
